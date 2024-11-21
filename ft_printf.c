@@ -6,71 +6,88 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/19 19:04:51 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/21 18:04:10 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <stdio.h>
-#include <stdarg.h>
+#include "printf.h"
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
-    va_start(args, str);
+	va_list	args;
 	size_t	i;
+	size_t	numb_char;
+	size_t	numb_char_formats;
+	char	*strgs;
 
 	i = 0;
-	while(str)
+	numb_char = 0;
+	numb_char_formats = 0;
+	va_start(args, str);
+	strgs = (char *)str;
+	while(*strgs)
 	{
-		if (*str == '%')
+		if (*strgs == '%')
 		{
-			while (*str != '%' || *str != '\0')
-			{
-				i++;
-				str++;
-			}
-			select_formats(args - i, str);
+			// while (*strgs != 32)
+			// {
+			// 	i++;
+			// 	strgs++;
+			// }
+			numb_char += select_formats(args , &strgs - i, numb_char_formats);
+		if (*strgs)
+			strgs++;
 		}
-		str++;
+		if (*strgs)
+			numb_char += ft_pf_putchar(*strgs++);
+	
 	}
-
 	va_end(args);
+	return (numb_char);
 }
 
-int select_formats(va_list args, const char *format)
+size_t	select_formats(va_list args, char **format, size_t numb_char)
 {
-
-        if (*format == '%')
-		{
-            format++;
-			if (*format == '0')
-				//fill the empty spaces with 0. need to do string lenght of the rest of the output and thens put the rest with 0
-			if (*format == '+')
-				//call function putnbr and show + if its positiv or - if negative  (%d, %i)
-			if (*format == ' ')
-				//call function epspaco put space before output (alinha os prints) adiciona um space adicioanl se for positivo
-			if (*format == '#')
-				//call function to add 0x if x or 0X if X before the rest of number 
-			if (*format == 'c')
-				ft_putchar_fd(va_arg(args, char), 0);
-			else if (*format == 's')
-				ft_putstr_fd(va_arg(args, char *), 0);
-			else if (*format == 'p')
-				ft_puttnbr_hexa_l(va_arg(args, int), 0);
-			else if (*format == 'd')
-				ft_putnbr_fd(va_arg(args, int), 0);
-			else if (*format == 'i')
-				ft_putnbr_fd(va_arg(args, int), 0);
-								 // needs to round the number 
-			else if (*format == 'u')
-				ft_putnbr_fd_ui(va_arg(args, unsigned int), 0);
-			else if (*format == 'x')
-				ft_puttnbr_hexa_l(va_arg(args, int), 0);
-			else if (*format == 'X')
-				ft_puttnbr_hexa_u(va_arg(args, int), 0);
-			else if (*format == '%')
-				ft_putchar_fd('%', 0);
-		}
-		format++;
+        
+	(*format)++;
+	if (**format == 'c')
+		numb_char += ft_pf_putchar(va_arg(args, int));
+	else if (**format == 's')
+		numb_char += ft_pf_putstr(va_arg(args, char *));
+	else if (**format == 'p')
+	{
+		numb_char += ft_pf_putstr("0x");
+		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_L);
 	}
+	else if (**format == 'd' || **format == 'i')
+		numb_char += ft_pf_putnbr(va_arg(args, int));
+	else if (**format == 'u')
+		numb_char += ft_pf_putnbr_ui(va_arg(args, unsigned int));
+	else if (**format == 'x')
+		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_L);
+	else if (**format == 'X')
+		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_U);
+	else if (**format == '%')
+		numb_char += ft_pf_putchar('%');
+	else
+		numb_char += analize_flags(args, format, numb_char);
+	return (numb_char);	
+	
+}
+
+size_t	analize_flags(va_list args, char **format, size_t numb_char)
+{
+	if (**format == '#')
+		numb_char += hash_flag(args, format, numb_char);
+	if (**format == '+')
+		numb_char += put_sign(args, format, numb_char);
+	if (**format == '0')
+		numb_char += handle_zero(args, format, numb_char);
+	if (**format == '-')
+		numb_char += handle_dash(args, format, numb_char);
+	if (**format == '.')
+		numb_char += handle_dot(args, format, numb_char);
+	if (**format == ' ')
+		numb_char += handle_empty_space(args, format, numb_char);
+	return (numb_char);
+}
