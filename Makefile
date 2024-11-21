@@ -6,7 +6,7 @@
 #    By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 09:37:48 by hfilipe-          #+#    #+#              #
-#    Updated: 2024/11/21 18:04:11 by hfilipe-         ###   ########.fr        #
+#    Updated: 2024/11/21 19:05:06 by hfilipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 CFLAGS = -Werror -Wextra -Wall
 SRC = ft_pf_atoi.c ft_pf_putchar.c ft_pf_putnbr.c ft_pf_putnbr_hex.c \
 ft_pf_putnbr_ui.c ft_pf_putstr.c ft_printf.c handle_dash.c handle_dot.c \
-handle_empty_space.c handle_zero.c hash_flag.c put_sign.c
+handle_empty_space.c handle_zero.c hash_flag.c put_sign.c ft_strlen.c
 OBJ = $(SRC:.c=.o)
 NAME = printft.a
 EXEC = main

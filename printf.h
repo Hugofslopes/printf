@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 16:41:58 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/21 19:05:05 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ size_t numb_char);
 size_t			handle_dot(va_list args, char **format, \
 size_t numb_char);
 int				ft_pf_atoi(char *str);
+size_t			ft_strlen(const char *str);
 #endif

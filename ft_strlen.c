@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 14:15:47 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 14:17:05 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/10/17 12:59:08 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/21 18:39:53 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "printf.h"
 
-int	main(void)
+size_t	ft_strlen(const char *str)
 {
-	char	c;
-	int		a;
+	size_t	i;
 
-	c = '5';
-	a = c - 48;
-	printf ("%-5d", a);
-	return (0);
+	i = 0;
+	while (*str++)
+		i++;
+	return (i);
 }

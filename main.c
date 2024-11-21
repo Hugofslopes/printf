@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:01:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 18:04:09 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/21 19:05:03 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(void)
 	int X = 0xff;
 	unsigned int u = -10;
 	unsigned int u2 = 2147483649;
+	char	c = '5';
+	int		a = c - 48;
 
 	puts(BG_WHITE BLUE"TEST STRING"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- "RESET);
@@ -89,4 +91,70 @@ int	main(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("%u",u2);
+	puts("\n");
+	puts(BG_WHITE BLUE"TEST DECIMAL"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%d", a);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf ("%d", a);
+	puts("\n");
+	puts(BG_WHITE BLUE"TEST DASH"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%-5d", a);
+	puts(RED"|"RESET);
+	printf(CYAN"PRINTF- "RESET);
+	printf("%-5d", a);
+	puts(RED"|"RESET);
+	puts (" ");
+	puts(BG_WHITE BLUE"TEST SPACE WITH NUMBER"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%05d", a);
+	puts(RED"|"RESET);
+	printf(CYAN"PRINTF- "RESET);
+	printf("%05d", a);
+	puts(RED"|"RESET);
+	puts (" ");
+	puts(BG_WHITE BLUE"TEST DOT WITH STR (5 CHAR)"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%.5s", ola);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("%.5s", ola);
+	puts ("\n");
+	puts(BG_WHITE BLUE"TEST DOT WITH STR (2 CHAR)"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%.2s", ola);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("%.2s", ola);
+	puts ("\n");
+	puts(BG_WHITE BLUE"TEST DOT WITH STR (0 CHAR)"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%.0s", ola);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("%.0s", ola);
+	puts ("\n");
+	puts(BG_WHITE BLUE"TEST PLUS SIGN WITH POSITIVE"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%+d", 1);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("%+d", 1);
+	puts ("\n");
+	puts(BG_WHITE BLUE"TEST PLUS SIGN WITH NEGATIVE"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("%+d", -1);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("%+d", -1);
+	puts ("\n");
+	puts(BG_WHITE BLUE"TEST ONE STRING, ONE INTEGER, ONE HEXA, ONE POINTER, ONE UNSIGNED INT"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	printf("%s %d %x %X %p %u",ola, -1, 0xab, 0xab, ola, u);
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("%s %d %x %X %p %u",ola, -1, 0xab, 0xab, ola, u);
+	puts ("\n");
 }

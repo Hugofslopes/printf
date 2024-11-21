@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:08:41 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 16:03:27 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/21 18:46:48 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 size_t	handle_dot(va_list args, char **format, size_t numb_char)
 {
-	size_t	number_of_char;
-	char	*str;
+	size_t	len;
+	const char	*str;
 
-	str = va_arg(args, char *);
-	number_of_char = (**format) - 48;
-	while (numb_char)
+	str = (const char *)va_arg(args, char *);
+	(*format)++;
+	len = **format - 48;
+	while (len >=1)
 	{
 		ft_pf_putchar(*str);
 		str++;
-		numb_char --;
+		len--;
+		numb_char++;
 	}
+	(*format)++;
 	return (numb_char);
 }
