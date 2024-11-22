@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:01:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:40:23 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:34:58 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,7 +208,7 @@ int	main(void)
 	printf("%d", printf("%7c", 'a'));
 	puts ("\n");
 
-	puts(BG_WHITE BLUE"FIELD WITH CHAR"RESET);
+	puts(BG_WHITE BLUE"FIELD WITH STR"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%7s", "ola"));
 	puts(" ");
@@ -216,7 +216,7 @@ int	main(void)
 	printf("\t%d", printf("%7s", "ola"));			
 	puts("\n");
 
-	puts(BG_WHITE BLUE"FIELD WITH CHAR"RESET);
+	puts(BG_WHITE BLUE"FIELD WITH HEXA"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%10x", 0x123));
 	puts(" ");
@@ -224,6 +224,11 @@ int	main(void)
 	printf("\t%d", printf("%10x", 0x123));				
 	puts("\n");
 
-		
-		
+	puts(BG_WHITE BLUE"FIELD WITH UNSIGNED"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%12u", u));		
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%12u", u));	
+	
 }

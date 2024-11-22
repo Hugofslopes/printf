@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:54:00 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:35:07 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ size_t			ft_pf_putstr_fw(char *s, size_t field_len);
 size_t			ft_pf_putnbr_hex_fw(int n, char *base, size_t field_len);
 size_t			ft_pf_putnbr_p_fw(int n, char *base, size_t field_len);
 size_t			ft_pf_putnbr_fw(int n, size_t field_len);
+size_t			ft_pf_putnbr_ui_fw(unsigned int n, size_t field_size);
+size_t			analize_flags_fw(va_list args, char **format, \
+size_t numb_char, size_t field_len);
+size_t			handle_dot_fw(va_list args, char **format, \
+size_t numb_char, size_t field_len);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

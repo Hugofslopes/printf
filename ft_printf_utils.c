@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hash_flag.c                                        :+:      :+:    :+:   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:08:59 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 16:25:26 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 16:22:04 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/22 16:23:01 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	hash_flag(va_list args, char **format, size_t numb_char)
+size_t	check_with(char **format)
 {
+	size_t	 field_len;
+	
 	(*format)++;
-	if (**format == 'x')
-	{
-		numb_char += ft_pf_putstr("0x");
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_L);
-	}
-	if (**format == 'X')
-	{
-		numb_char += ft_pf_putstr("0X");
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_U);
-	}
-	return (numb_char);
+	field_len = 0;
+	if (**format >= '1' && **format <= '9')
+		field_len = field_size(format);
+	if (field_len > 0)
+		return (field_len);
+	else 
+		return (0);
 }

@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hash_flag.c                                        :+:      :+:    :+:   */
+/*   handle_dot_fw.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:08:59 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 16:25:26 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 16:28:48 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/22 16:35:00 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	hash_flag(va_list args, char **format, size_t numb_char)
+size_t			handle_dot_fw(va_list args, char **format, \
+size_t numb_char, size_t field_len)
 {
+	size_t		len;
+	const char	*str;
+	size_t		str_len;
+
+	str = (const char *)va_arg(args, char *);
 	(*format)++;
-	if (**format == 'x')
+	len = **format - 48;
+	str_len = ft_strlen(str);
+	while (len < field_len)
 	{
-		numb_char += ft_pf_putstr("0x");
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_L);
+		ft_pf_putchar(' ');
+		field_len--;
+		numb_char++;
 	}
-	if (**format == 'X')
+	while (len >= 1)
 	{
-		numb_char += ft_pf_putstr("0X");
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_U);
+		ft_pf_putchar(*str);
+		str++;
+		len--;
+		numb_char++;
 	}
+	(*format)++;
 	return (numb_char);
 }

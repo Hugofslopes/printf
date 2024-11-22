@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:56:28 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:34:59 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ size_t numb_char, size_t field_len)
 	else if (**format == 'd' || **format == 'i')
 		numb_char += ft_pf_putnbr_fw(va_arg(args, int), field_len);
 	else if (**format == 'u')
-		numb_char += ft_pf_putnbr_ui(va_arg(args, unsigned int));
+		numb_char += ft_pf_putnbr_ui_fw(va_arg(args, unsigned int), field_len);
 	else if (**format == 'x')
 		numb_char += ft_pf_putnbr_hex_fw(va_arg(args, int), BASE_L, field_len);
 	else if (**format == 'X')
@@ -67,12 +67,12 @@ size_t numb_char, size_t field_len)
 	else if (**format == '%')
 		numb_char += ft_pf_putchar('%');
 	else
-		numb_char += analize_flags(args, format, numb_char);
+		numb_char += analize_flags_fw(args, format, numb_char, field_len);
 	return (numb_char);	
 }
 
 size_t	select_formats(va_list args, char **format, size_t numb_char)
-{    
+{
 	if (**format == 'c')
 		numb_char += ft_pf_putchar(va_arg(args, int));
 	else if (**format == 's')
@@ -95,21 +95,6 @@ size_t	select_formats(va_list args, char **format, size_t numb_char)
 	else
 		numb_char += analize_flags(args, format, numb_char);
 	return (numb_char);	
-	
-}
-
-size_t	check_with(char **format)
-{
-	size_t	 field_len;
-	
-	(*format)++;
-	field_len = 0;
-	if (**format >= '1' && **format <= '9')
-		field_len = field_size(format);
-	if (field_len > 0)
-		return (field_len);
-	else 
-		return (0);
 }
 
 size_t	analize_flags(va_list args, char **format, size_t numb_char)
@@ -129,6 +114,31 @@ size_t	analize_flags(va_list args, char **format, size_t numb_char)
 				numb_char += handle_dash(args, format, numb_char);
 			if (**format == '.')
 				numb_char += handle_dot(args, format, numb_char);
+			if (**format == ' ')
+				numb_char += handle_empty_space(args, format, numb_char);
+		}
+		return(numb_char);
+	}
+	return (numb_char);
+}
+
+size_t	analize_flags_fw(va_list args, char **format, size_t numb_char, size_t field_len)
+{
+	while (**format)
+	{
+		while (**format == '#' || **format == '+' || **format == '0' || \
+		**format == '-' || **format == '.')
+		{
+			if (**format == '#')
+				numb_char += hash_flag(args, format, numb_char);
+			if (**format == '+')
+				numb_char += put_sign(args, format, numb_char);
+			if (**format == '0')
+				numb_char += handle_zero(args, format, numb_char);
+			if (**format == '-')
+				numb_char += handle_dash(args, format, numb_char);
+			if (**format == '.')
+				numb_char += handle_dot_fw(args, format, numb_char, field_len);
 			if (**format == ' ')
 				numb_char += handle_empty_space(args, format, numb_char);
 		}

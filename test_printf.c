@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:54:38 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:48:52 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:35:02 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int main()
 {
-	
-	printf("\t%d", printf("%5d", 10));			
+	unsigned int i;
+	i = -2;	
+	printf("\t%d", printf("'%7.3s'", "Zedro0"));	
 	puts("\n");
-	ft_printf("\t%d", ft_printf("%5d", 10));		
-	
+	ft_printf("\t%d", ft_printf("'%7.3s'", "Zedro0"));		
 
 }
