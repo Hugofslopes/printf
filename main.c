@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:01:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 16:34:58 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:24:17 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(void)
 	unsigned int u2 = 2147483649;
 	char	c = '5';
 	int		a = c - 48;
+	char *b;
+	b = NULL;
 
 	puts(BG_WHITE BLUE"TEST NUMBER"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- "RESET);
@@ -62,12 +64,28 @@ int	main(void)
 	printf("\t%d", printf("\tola%s",ola));
 	puts("\n");
 
+	puts(BG_WHITE BLUE"TEST NULL STRING"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("\t%d", ft_printf("%p", b));
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("\t\t%d", printf("%p", b));
+	puts("\n");
+
 	puts(BG_WHITE BLUE"TEST POINTER"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- "RESET);
 	ft_printf("\t%d", ft_printf("\t%p",ola));
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%p",ola));
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST NULL POINTER"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("\t%d", ft_printf("\t%p",b));
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("\t%d", printf("\t%p",b));
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST HEXA L_CASE WITH #"RESET);

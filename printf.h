@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 16:35:07 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:24:20 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define BASE_L "0123456789abcdef"
 # define BASE_U "0123456789ABCDEF"
 
-size_t			ft_pf_putnbr_hex(int n, char *base);
+size_t			ft_pf_putnbr_hex(unsigned long n, char *base);
 size_t			ft_pf_putchar(char c);
 size_t			ft_pf_putnbr(int n);
 size_t			ft_pf_putnbr_ui(unsigned int n);
@@ -49,14 +49,15 @@ size_t			ft_pf_putchar_fw(char c, size_t field_len);
 size_t			select_formats_with_field(va_list args, char **format, \
 size_t 			numb_char, size_t field_len);
 size_t			ft_pf_putstr_fw(char *s, size_t field_len);
-size_t			ft_pf_putnbr_hex_fw(int n, char *base, size_t field_len);
-size_t			ft_pf_putnbr_p_fw(int n, char *base, size_t field_len);
+size_t			ft_pf_putnbr_hex_fw(unsigned long n, char *base, size_t field_len);
+size_t			ft_pf_putnbr_p_fw(unsigned long n, char *base, size_t field_len);
 size_t			ft_pf_putnbr_fw(int n, size_t field_len);
 size_t			ft_pf_putnbr_ui_fw(unsigned int n, size_t field_size);
 size_t			analize_flags_fw(va_list args, char **format, \
 size_t numb_char, size_t field_len);
 size_t			handle_dot_fw(va_list args, char **format, \
 size_t numb_char, size_t field_len);
+size_t			ft_pf_putnbr_p(unsigned long n, char *base);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 16:34:59 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:24:19 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,15 @@ size_t numb_char, size_t field_len)
 	else if (**format == 's')
 		numb_char += ft_pf_putstr_fw(va_arg(args, char *), field_len);
 	else if (**format == 'p')
-		numb_char += ft_pf_putnbr_p_fw(va_arg(args, int), BASE_L, field_len);
+		numb_char += ft_pf_putnbr_p_fw(va_arg(args, unsigned long), BASE_L, field_len);
 	else if (**format == 'd' || **format == 'i')
 		numb_char += ft_pf_putnbr_fw(va_arg(args, int), field_len);
 	else if (**format == 'u')
 		numb_char += ft_pf_putnbr_ui_fw(va_arg(args, unsigned int), field_len);
 	else if (**format == 'x')
-		numb_char += ft_pf_putnbr_hex_fw(va_arg(args, int), BASE_L, field_len);
+		numb_char += ft_pf_putnbr_hex_fw(va_arg(args, unsigned long), BASE_L, field_len);
 	else if (**format == 'X')
-		numb_char += ft_pf_putnbr_hex_fw(va_arg(args, int), BASE_U, field_len);
+		numb_char += ft_pf_putnbr_hex_fw(va_arg(args, unsigned long), BASE_U, field_len);
 	else if (**format == '%')
 		numb_char += ft_pf_putchar('%');
 	else
@@ -78,18 +78,15 @@ size_t	select_formats(va_list args, char **format, size_t numb_char)
 	else if (**format == 's')
 		numb_char += ft_pf_putstr(va_arg(args, char *));
 	else if (**format == 'p')
-	{
-		numb_char += ft_pf_putstr("0x");
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_L);
-	}
+		numb_char += ft_pf_putnbr_p(va_arg(args, unsigned long), BASE_L);
 	else if (**format == 'd' || **format == 'i')
 		numb_char += ft_pf_putnbr(va_arg(args, int));
 	else if (**format == 'u')
 		numb_char += ft_pf_putnbr_ui(va_arg(args, unsigned int));
 	else if (**format == 'x')
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_L);
+		numb_char += ft_pf_putnbr_hex(va_arg(args, unsigned long), BASE_L);
 	else if (**format == 'X')
-		numb_char += ft_pf_putnbr_hex(va_arg(args, int), BASE_U);
+		numb_char += ft_pf_putnbr_hex(va_arg(args, unsigned long), BASE_U);
 	else if (**format == '%')
 		numb_char += ft_pf_putchar('%');
 	else

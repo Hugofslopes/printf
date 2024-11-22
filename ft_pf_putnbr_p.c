@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_dot_fw.c                                    :+:      :+:    :+:   */
+/*   ft_pf_putnbr_p.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 16:28:48 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 18:34:41 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 18:47:21 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/22 19:06:47 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t			handle_dot_fw(va_list args, char **format, \
-size_t numb_char, size_t field_len)
+size_t	ft_pf_putnbr_p(unsigned long n, char *base)
 {
-	size_t		len;
-	const char	*str;
-	size_t		str_len;
+	size_t	numb_char;
+	int		array[20];
+	size_t		i;
 
-	str = (const char *)va_arg(args, char *);
-	(*format)++;
-	len = **format - 48;
-	str_len = ft_strlen(str);
-	while (str_len < field_len)
+	numb_char = 0;
+	if (n == 0)
 	{
-		ft_pf_putchar(' ');
-		field_len--;
-		numb_char++;
+		ft_pf_putstr("(nil)");
+		return (5);
 	}
-	while (len >= 1)
+	numb_char += ft_pf_putstr("0x");
+	i = 0;
+	while (n > 0)
 	{
-		ft_pf_putchar(*str);
-		str++;
-		len--;
-		numb_char++;
+		array[i++] = (n % 16);
+		n /= 16;
 	}
-	(*format)++;
+	while (i > 0)
+	numb_char += ft_pf_putchar(base[array[--i]]);
 	return (numb_char);
 }

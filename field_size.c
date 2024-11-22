@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   field_with.c                                       :+:      :+:    :+:   */
+/*   field_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:55:41 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 14:19:28 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:24:15 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	field_size(char **format)
 {
-	char			array[11];
+	char array[11] = {0};
 	size_t			i;
 	unsigned int	field_len;
 

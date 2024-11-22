@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_ui.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 17:32:44 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 10:26:26 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 18:38:57 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ size_t	ft_pf_putnbr_ui(unsigned int n)
 
 	i = 0;
 	numb_char = 0;
-	if (n < 0)
-	{
-		numb_char += ft_pf_putchar('-');
-		n = -n;
-	}
 	if (n == 0)
 		array[i++] = 48;
 	while (n > 0)

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pf_putnbr_p_fw.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/22 18:45:03 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/22 19:07:52 by hfilipe-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
-size_t	ft_pf_putnbr_p_fw(int n, char *base, size_t field_len)
+size_t	ft_pf_putnbr_p_fw(unsigned long n, char *base, size_t field_len)
 {
 	size_t	numb_char;
 	int		array[11];
@@ -9,6 +21,11 @@ size_t	ft_pf_putnbr_p_fw(int n, char *base, size_t field_len)
 	size_t	len;
 	char 	str[10] = {0};
 
+	if ( n == 0)
+	{
+		ft_pf_putstr("(nil)");
+		return (5);
+	}
 	field_len -= 2;
 	j = 0;
 	numb_char = 0;
