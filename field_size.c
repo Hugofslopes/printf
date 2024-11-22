@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putnbr.c                                     :+:      :+:    :+:   */
+/*   field_with.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 09:20:03 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 09:50:55 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 11:55:41 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/22 14:19:28 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putnbr(int n)
+size_t	field_size(char **format)
 {
-	long int	numb;
-	size_t		numb_char;
-	char		array[20];
-	size_t		i;
-	
-	numb = n;
+	char			array[11];
+	size_t			i;
+	unsigned int	field_len;
+
 	i = 0;
-	numb_char = 0;
-	if (numb < 0)
+	field_len = 0;
+	while(**format >= '0' && **format <= '9')
 	{
-		numb_char += ft_pf_putchar('-');
-		numb = -numb;
+		array[i++] = **format;
+		(*format)++;
 	}
-	if (numb == 0)
-		array[i++] = 48;
-	while (numb > 0)
-	{
-		array[i++] = (numb % 10) + '0';
-		numb /= 10;
-	}
-	while (i > 0)
-		numb_char += ft_pf_putchar(array[--i]);
-	return (numb_char);
+	field_len = ft_pf_atoi(array);
+	return (field_len);
 }

@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:40:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 18:31:07 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 09:11:20 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ size_t	handle_zero(va_list args, char **format, size_t numb_char)
 		}
 		numb_char += ft_pf_putnbr(nbr);
 	}
-	format++;
+	(*format)++;
 	return (numb_char);
 }

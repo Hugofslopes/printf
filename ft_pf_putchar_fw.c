@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putnbr.c                                     :+:      :+:    :+:   */
+/*   ft_pf_putchar_fw.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 09:20:03 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 09:50:55 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 13:32:42 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/22 14:48:50 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putnbr(int n)
+size_t	ft_pf_putchar_fw(char c, size_t field_len)
 {
-	long int	numb;
-	size_t		numb_char;
-	char		array[20];
-	size_t		i;
-	
-	numb = n;
-	i = 0;
-	numb_char = 0;
-	if (numb < 0)
+
+	size_t numb_char = 0;
+	while (field_len > 1)
 	{
-		numb_char += ft_pf_putchar('-');
-		numb = -numb;
+		write(1, " ", 1);
+		field_len--;
+		numb_char++;
 	}
-	if (numb == 0)
-		array[i++] = 48;
-	while (numb > 0)
-	{
-		array[i++] = (numb % 10) + '0';
-		numb /= 10;
-	}
-	while (i > 0)
-		numb_char += ft_pf_putchar(array[--i]);
+	write(1, &c, 1);
+	numb_char++;
 	return (numb_char);
 }
