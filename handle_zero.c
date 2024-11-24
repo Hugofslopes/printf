@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:40:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 19:11:23 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 20:59:58 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	handle_zero(va_list args, char **format, size_t numb_char)
 	nbr = (const int)va_arg(args, int);
 	nbr_of_nbrs = count_decimal(va_arg(args, int));
 	(*format)++;
-	total_output = (**format - 48) - 1;
+	total_output = ft_pf_atoi(*format);
 	if (nbr_of_nbrs == total_output)
 		numb_char += ft_pf_putnbr(nbr);
 	if (nbr_of_nbrs <= total_output)

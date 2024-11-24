@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:54:16 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 19:09:52 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:02:01 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ unsigned int	count_decimal(int nbr)
 {
 	unsigned int	count;
 
-	count = 0;
+	count = 1;
 	while (nbr)
 	{
 		count ++;
@@ -34,7 +34,7 @@ size_t	handle_dash(va_list args, char **format, size_t numb_char)
 	nbr = (const int)va_arg(args, int);
 	nbr_of_nbrs = count_decimal(va_arg(args, int));
 	(*format)++;
-	total_output = (**format - 48) - 1;
+	total_output = ft_pf_atoi(*format);
 	if (nbr_of_nbrs == total_output)
 		numb_char += ft_pf_putnbr(nbr);
 	if (nbr_of_nbrs <= total_output)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:08:41 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 18:46:48 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:11:07 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,24 @@ size_t	handle_dot(va_list args, char **format, size_t numb_char)
 
 	str = (const char *)va_arg(args, char *);
 	(*format)++;
-	len = **format - 48;
-	while (len >=1)
+	len = ft_pf_atoi(*format);
+	if (len > ft_strlen(str))
+		{
+			while (*str)
+			{
+				ft_pf_putchar(*str);
+				numb_char++;
+				str++;
+			}
+		}
+	else
 	{
-		ft_pf_putchar(*str);
-		str++;
-		len--;
-		numb_char++;
+		while (len >= 1)
+		{
+			ft_pf_putchar(*str++);
+			len--;
+			numb_char++;
+		}
 	}
 	(*format)++;
 	return (numb_char);
