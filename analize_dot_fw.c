@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_printf.c                                      :+:      :+:    :+:   */
+/*   analize_dot_fw.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 13:54:38 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/24 14:50:29 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/24 13:59:17 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/24 14:09:56 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#include "colors.h"
 
-int main()
+size_t	analize_dot_fw(int numb, size_t numb_char, char **format, size_t field_len)
 {
-	
-	// ft_printf("\t%d", ft_printf("'%.d.%3.7d'\n", 42, 420));
-	// puts(" ");
-	// printf("\t%d", printf("'%.d.%3.7d'\n", 42, 420));
-	// puts ("\n");
-		char *str3 = "'%.214748364d'\n";
-	printf(str3, -216);
-	ft_printf(str3, -216);
-	puts ("\n");
-		
+	if (**format == 'd')
+		numb_char += ft_pf_putnbr_fw(numb, field_len);
+	if (**format >= 1 || **format <= 9)
+	{
+		(*format)++;
+		numb_char += ft_pf_putnbr_fw(numb, field_len);
+	}
+	return (numb_char);
 }

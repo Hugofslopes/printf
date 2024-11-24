@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 20:58:11 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/24 14:11:42 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,18 @@ size_t			check_with(char **format);
 size_t			ft_pf_putchar_fw(char c, size_t field_len);
 size_t			select_formats_with_field(va_list args, char **format, \
 size_t 			numb_char, size_t field_len);
-size_t			ft_pf_putstr_fw(char *s, size_t field_len);
+size_t	ft_pf_putstr_fw(char *s, size_t field_len, char **format, \
+size_t numb_char);
 size_t			ft_pf_putnbr_hex_fw(unsigned long n, char *base, size_t field_len);
 size_t			ft_pf_putnbr_p_fw(unsigned long n, char *base, size_t field_len);
 size_t			ft_pf_putnbr_fw(int n, size_t field_len);
 size_t			ft_pf_putnbr_ui_fw(unsigned int n, size_t field_size);
 size_t			analize_flags_fw(va_list args, char **format, \
-size_t numb_char, size_t field_len);
-size_t			handle_dot_fw(va_list args, char **format, \
-size_t numb_char, size_t field_len);
+size_t numb_char);
+size_t			handle_dot_fw(char *str, char **format, size_t numb_char, \
+size_t field_len);
 size_t			ft_pf_putnbr_p(unsigned long n, char *base);
+size_t			analize_dot_fw(int numb, size_t numb_char, char **format, size_t field_len);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

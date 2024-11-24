@@ -6,7 +6,7 @@
 #    By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 09:37:48 by hfilipe-          #+#    #+#              #
-#    Updated: 2024/11/22 18:49:01 by hfilipe-         ###   ########.fr        #
+#    Updated: 2024/11/24 14:07:00 by hfilipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ ft_pf_putnbr_ui.c ft_pf_putstr.c ft_printf.c handle_dash.c handle_dot.c \
 handle_empty_space.c handle_zero.c hash_flag.c put_sign.c ft_strlen.c \
 field_size.c ft_pf_putstr_fw.c ft_pf_putchar_fw.c ft_pf_putnbr_hex_fw.c \
 ft_pf_putnbr_p_fw.c ft_pf_putnbr_fw.c ft_pf_putnbr_ui_fw.c ft_printf_utils.c \
-handle_dot_fw.c ft_pf_putnbr_p.c \
+handle_dot_fw.c ft_pf_putnbr_p.c analize_dot_fw.c \
 ft_putstr_fd.c ft_putchar_fd.c 
 OBJ = $(SRC:.c=.o)
 NAME = printft.a

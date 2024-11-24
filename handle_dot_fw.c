@@ -6,35 +6,39 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:28:48 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 18:34:41 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/24 12:47:57 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t			handle_dot_fw(va_list args, char **format, \
-size_t numb_char, size_t field_len)
+size_t	handle_dot_fw(char *str, char **format, size_t numb_char, size_t field_len)
 {
-	size_t		len;
-	const char	*str;
-	size_t		str_len;
+	size_t	len;
 
-	str = (const char *)va_arg(args, char *);
 	(*format)++;
-	len = **format - 48;
-	str_len = ft_strlen(str);
-	while (str_len < field_len)
+	len = ft_pf_atoi(*format);	
+	while (field_len > (size_t)ft_pf_atoi(*format))
 	{
-		ft_pf_putchar(' ');
+		numb_char += ft_pf_putchar(' ');
 		field_len--;
-		numb_char++;
 	}
-	while (len >= 1)
+	if (len > ft_strlen(str))
+		{
+			while (*str)
+			{
+				numb_char += ft_pf_putchar(*str);
+				str++;
+			}
+		}
+	else
 	{
-		ft_pf_putchar(*str);
-		str++;
-		len--;
-		numb_char++;
+		while (len >= 1)
+		{
+			numb_char += ft_pf_putchar(*str);
+			str++;
+			len--;
+		}
 	}
 	(*format)++;
 	return (numb_char);

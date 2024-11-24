@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_P.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:34:25 by passunca          #+#    #+#             */
-/*   Updated: 2024/11/22 16:35:01 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/24 12:52:15 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void test_c(void)
 	str = "'%3c...%2c'\n";
 	printf(str, 'z', 'Z');
 	ft_printf(str, 'z', 'Z');
-	printf("'%5%'\n");
+	//printf("'%5%'\n");
 	ft_printf("'%5%'\n");	
-	printf("'%-5%'\n");
+	//printf("'%-5%'\n");
 	ft_printf("'%-5%'\n");
 }
 
