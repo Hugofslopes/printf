@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putstr_fw.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:49:58 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/24 12:47:10 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:36:40 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ size_t numb_char)
 	size_t	str_len;
 
 	if (!s)
-		{
-			ft_pf_putstr("(null)");
-			return (6);	
-		}
+	{
+		ft_pf_putstr("(null)");
+		return (6);
+	}
 	if (**format == 's')
 	{
 		numb_char = 0;
@@ -37,6 +37,5 @@ size_t numb_char)
 	}
 	else if (**format == '.')
 		numb_char += handle_dot_fw(s, format, numb_char, field_len);
-
 	return (numb_char);
 }

@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:20:03 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 09:50:55 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:29:47 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_pf_putnbr(int n)
 	size_t		numb_char;
 	char		array[20];
 	size_t		i;
-	
+
 	numb = n;
 	i = 0;
 	numb_char = 0;

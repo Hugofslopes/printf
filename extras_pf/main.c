@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:01:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/24 12:10:09 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 14:04:37 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,14 @@ void decimal(void)
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%+d", -1));
 	puts ("\n");
+
+	puts(BG_WHITE BLUE"TEST DOT FLAG WITH 2"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- "RESET);
+	ft_printf("\t%d", ft_printf("%.2d", 1));
+	puts(" ");
+	printf(CYAN"PRINTF- "RESET);
+	printf("\t%d", printf("%.2d", 1));
+	puts ("\n");
 }
 void unsigneds(void)
 {
@@ -129,12 +137,20 @@ void unsigneds(void)
 	printf("\t%d", printf("\t%u",u2));
 	puts("\n");
 
-	puts(BG_WHITE BLUE"FIELD WITH UNSIGNED"RESET);
+	puts(BG_WHITE BLUE"TEST FIELD WITH UNSIGNED"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%12u", u));		
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%12u", u));
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST . FLAG WITH 15"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%.15u", -1));		
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%.15u", -1));
 	puts("\n");
 }
 void l_hexa(void)
@@ -165,6 +181,22 @@ void l_hexa(void)
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%10x", 0x123));				
 	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST . FLAG WITH 5"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%.5x", 255));
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%.5x", 255));				
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST FIELD_W 10 WITH . FLAG WITH 5"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%#10.5x", 255));
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%#10.5x", 255));				
+	puts("\n");
 }
 void u_hexa(void)
 {
@@ -185,6 +217,22 @@ void u_hexa(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%X",X));
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST . FLAG WITH 5"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%.5X", 255));
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%.5X", 255));				
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST FIELD_W 10 WITH . FLAG WITH 5"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%#10.5X", 255));
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%#10.5X", 255));				
 	puts("\n");
 }
 
@@ -285,7 +333,7 @@ void strs(void)
 	printf("\t%d", printf("%7s", "ola"));			
 	puts("\n");
 
-	puts(BG_WHITE BLUE"FIELD SIZE 7 WITH STR"RESET);
+	puts(BG_WHITE BLUE"FIELD SIZE 7 WITH DOT FLAG 2 STR"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%7.2s", "ola"));
 	puts(" ");

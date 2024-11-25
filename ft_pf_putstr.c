@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:12:21 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 18:38:51 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:32:02 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ size_t	ft_pf_putstr(char *s)
 	if (!s)
 	{
 		ft_pf_putstr("(null)");
-		return (6);	
+		return (6);
 	}
 	while (*s)
 		numb_char += ft_pf_putchar(*s++);
-	return( numb_char);
+	return (numb_char);
 }

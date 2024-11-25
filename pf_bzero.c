@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putnbr_p.c                                   :+:      :+:    :+:   */
+/*   pf_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 18:47:21 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 15:54:34 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/10/17 13:55:24 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/25 16:20:26 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putnbr_p(unsigned long n, char *base)
+void	pf_bzero(char **ptr, size_t n)
 {
-	size_t	numb_char;
-	int		array[20];
-	size_t	i;
+	unsigned int	i;
 
-	numb_char = 0;
-	if (n == 0)
-	{
-		ft_pf_putstr("(nil)");
-		return (5);
-	}
-	numb_char += ft_pf_putstr("0x");
 	i = 0;
-	while (n > 0)
-	{
-		array[i++] = (n % 16);
-		n /= 16;
-	}
-	while (i > 0)
-		numb_char += ft_pf_putchar(base[array[--i]]);
-	return (numb_char);
+	while (i < n)
+		(*ptr)[i++] = '\0';
 }

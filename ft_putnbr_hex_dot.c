@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_dot_fw.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_hex_dot.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 16:28:48 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 16:38:04 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/25 10:33:07 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/25 16:32:18 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	handle_dot_fw(char *str, char **format, size_t numb_char, \
-size_t field_len)
+size_t	ft_putnbr_hex_dot(unsigned long n, size_t numb_char, size_t n_zeros, \
+char *base)
 {
+	int		array[11];
+	size_t	i;
+	size_t	j;
 	size_t	len;
+	char	str[10];
 
-	(*format)++;
-	len = ft_pf_atoi(*format);
-	while (field_len > (size_t)ft_pf_atoi(*format))
+	pf_bzero(str, 10);
+	j = 0;
+	numb_char = 0;
+	i = 0;
+	while (n > 0)
 	{
-		numb_char += ft_pf_putchar(' ');
-		field_len--;
+		array[i++] = (n % 16);
+		n /= 16;
 	}
-	if (len > ft_strlen(str))
+	while (i > 0)
+		str[j++] = base[array[--i]];
+	len = ft_strlen(str);
+	j = 0;
+	while (len < n_zeros)
 	{
-		while (*str)
-			numb_char += ft_pf_putchar(*str++);
+		numb_char += ft_pf_putchar('0');
+		n_zeros--;
 	}
-	else
-	{
-		while (len >= 1)
-		{
-			numb_char += ft_pf_putchar(*str);
-			str++;
-			len--;
-		}
-	}
-	(*format)++;
+	numb_char += ft_pf_putstr(str);
 	return (numb_char);
 }

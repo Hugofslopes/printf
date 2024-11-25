@@ -3,26 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   test_printf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:54:38 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/24 14:50:29 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 15:05:49 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+//#include "printf.h"
 #include "colors.h"
+#include <stdio.h>
 
 int main()
 {
-	
-	// ft_printf("\t%d", ft_printf("'%.d.%3.7d'\n", 42, 420));
-	// puts(" ");
-	// printf("\t%d", printf("'%.d.%3.7d'\n", 42, 420));
+	// ft_printf("%#x", 255);
+	// puts (" ");
+	printf("%+05d", 2);
+	printf("a");
 	// puts ("\n");
-		char *str3 = "'%.214748364d'\n";
-	printf(str3, -216);
-	ft_printf(str3, -216);
-	puts ("\n");
-		
+
+	// ft_printf("%#5x", 255);
+	// puts (" ");
+	// printf("%#5x", 255);
+	// puts ("\n");
+
+	// ft_printf("%#.5x", 255);
+	// puts (" ");
+	// printf("%#.5x", 255);
+	// puts ("\n");
+	
+	// ft_printf("%#10.5x", 255);
+	// puts (" ");
+	// printf("%#10.5x", 255);
+	// puts ("\n");
 }

@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dash.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:54:16 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 21:02:01 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:00:23 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-unsigned int	count_decimal(int nbr)
-{
-	unsigned int	count;
-
-	count = 1;
-	while (nbr)
-	{
-		count ++;
-		nbr /= 10;
-	}
-	return (count);
-}
 
 size_t	handle_dash(va_list args, char **format, size_t numb_char)
 {

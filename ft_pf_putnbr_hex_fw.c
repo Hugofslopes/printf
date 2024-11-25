@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_hex_fw.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:03:50 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/22 19:07:35 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/25 10:45:48 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ size_t	ft_pf_putnbr_hex_fw(unsigned long n, char *base, size_t field_len)
 	j = 0;
 	while (len < field_len)
 	{
-		ft_pf_putchar(' ');
-		numb_char++;
+		numb_char += ft_pf_putchar(' ');	
 		field_len--;
 	}
 	numb_char += ft_pf_putstr(str);
