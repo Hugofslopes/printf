@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putstr_fw.c                                  :+:      :+:    :+:   */
+/*   ft_pf_fw_dot_s.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 14:49:58 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 19:10:11 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/26 19:23:09 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/26 20:49:53 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putstr_fw(char *s, size_t field_len, size_t numb_char)
+size_t	ft_pf_fw_dot_s(char *str, size_t len, size_t field_len)
 {
-	size_t	str_len;
+	size_t i;
+	size_t numb_char;
 
-	if (!s)
-	{
-		ft_pf_putstr("(null)");
-		return (6);
-	}
+	i = 0;
 	numb_char = 0;
-	str_len = ft_strlen(s);
-	while (field_len > str_len)
+	while (field_len > len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;
+	}	
+	while (len)
+	{
+		numb_char += ft_pf_putchar(str[i++]);
+		len--;
 	}
-	while (*s)
-		numb_char += ft_pf_putchar(*s++);
-
 	return (numb_char);
 }

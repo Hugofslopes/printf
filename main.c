@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:01:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 14:04:37 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:37:41 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,15 @@ void l_hexa(void)
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%#10.5x", 255));				
 	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST L_ALIGN 10 WITH . FLAG WITH 5"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%#-10.5x", 255));
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%#-10.5x", 255));				
+	puts("\n");
+	
 }
 void u_hexa(void)
 {
@@ -233,6 +242,14 @@ void u_hexa(void)
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%#10.5X", 255));				
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST L_ALIGN 10 WITH . FLAG WITH 5"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%#-10.5X", 255));
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%#-10.5X", 255));				
 	puts("\n");
 }
 

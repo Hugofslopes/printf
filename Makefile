@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+         #
+#    By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 09:37:48 by hfilipe-          #+#    #+#              #
-#    Updated: 2024/11/26 15:20:35 by hfilipe-         ###   ########.fr        #
+#    Updated: 2024/11/26 21:18:43 by hfilipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ ft_pf_putnbr_p_fw.c ft_pf_putnbr_fw.c ft_pf_putnbr_ui_fw.c ft_printf_utils.c \
 handle_dot_fw.c ft_pf_putnbr_p.c analize_dot_fw.c count_decimal.c\
 go_foward_array.c ft_putnbr_hex_dot.c ft_pf_putnbr_ui_dot.c ft_pf_putnbr_dot.c\
 ft_pf_putstr_dot.c ft_pf_putnbr_hash_fw.c pf_bzero.c handle_field.c \
-ft_pf_putnbr_hash_hex_fw2.c handle_dash_hash.c \
+ft_pf_putnbr_hash_hex_fw2.c handle_dash_hash.c ft_pf_putnbr_hash_hex_dash.c \
+ft_pf_fw_dot_s.c ft_pf_fw_dot_hex.c ft_pf_fw_dot.c\
 ft_putstr_fd.c ft_putchar_fd.c 
 OBJ = $(SRC:.c=.o)
 NAME = printft.a

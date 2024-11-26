@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 15:26:37 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 20:01:06 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ int	ft_printf(const char *str, ...)
 	while (*s)
 	{
 		if (*s == '%')
-		{
-			numb_char += select_formats(args, &s, numb_char);
-			if (*s)
-				s++;
-		}
+			numb_char += select_formats(args, &s);
 		if (*s)
 			numb_char += ft_pf_putchar(*s++);
 	}
@@ -36,8 +32,11 @@ int	ft_printf(const char *str, ...)
 	return (numb_char);
 }
 
-size_t	select_formats(va_list args, char **format, size_t numb_char)
+size_t	select_formats(va_list args, char **format)
 {
+	size_t numb_char;
+
+	numb_char = 0;
 	(*format)++;
 	if (**format == 'c')
 		numb_char += ft_pf_putchar(va_arg(args, int));
@@ -57,34 +56,30 @@ size_t	select_formats(va_list args, char **format, size_t numb_char)
 		numb_char += ft_pf_putchar('%');
 	else
 		numb_char += analize_flags(args, format, numb_char);
+	(*format)++;
 	return (numb_char);
 }
 
 size_t	analize_flags(va_list args, char **format, size_t numb_char)
 {
-	size_t	field_len;
-
-	field_len = field_size(format);
-	while (**format)
+	while (**format == '#' || **format == '+' || **format == '0' || \
+	**format == '-' || **format == '.' || (**format >= '1' && \
+	**format <= '9'))
 	{
-		while (**format == '#' || **format == '+' || **format == '0' || \
-		**format == '-' || **format == '.')
-		{
-			if (**format == '#')
-				numb_char += hash_flag(args, format, numb_char);
-			if (**format == '+')
-				numb_char += put_sign(args, format, numb_char);
-			if (**format == '0')
-				numb_char += handle_zero(args, format, numb_char);
-			if (**format == '-')
-				numb_char += handle_dash(args, format, numb_char);
-			if (**format == '.')
-				numb_char += handle_dot(args, format, numb_char);
-			if (**format == ' ')
-				numb_char += handle_empty_space(args, format, numb_char);
-			if (**format >= 1 && **format <= 9)
-				numb_char += handle_field(args, format, numb_char, field_len);
-		}
+		if (**format == '#')
+			numb_char += hash_flag(args, format, numb_char);
+		if (**format == '+')
+			numb_char += put_sign(args, format, numb_char);
+		if (**format == '0')
+			numb_char += handle_zero(args, format, numb_char);
+		if (**format == '-')
+			numb_char += handle_dash(args, format, numb_char);
+		if (**format == '.')
+			numb_char += handle_dot(args, format, numb_char);
+		if (**format == ' ')
+			numb_char += handle_empty_space(args, format, numb_char);
+		if (**format >= '1' && **format <= '9')
+			numb_char += handle_field(args, format, numb_char);
 	}
 	return (numb_char);
 }

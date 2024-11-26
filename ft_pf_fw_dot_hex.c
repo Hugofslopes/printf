@@ -1,54 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putnbr_hash_hex_fw2.c                        :+:      :+:    :+:   */
+/*   ft_pf_fw_dot_hex.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 12:51:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 17:51:28 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/26 20:50:22 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/26 21:15:35 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putnbr_hash_hex_fw2(unsigned long n, char *base, \
-size_t field_len, char c)
+size_t ft_pf_fw_dot_hex(unsigned long n, size_t len, size_t field_len, char *base)
 {
 	size_t	numb_char;
-	int		array[11];
 	size_t	i;
-	size_t	j;
-	char	str[10];
-
-	j = 0;
-	numb_char = 0;
-	pf_bzero(&str, 10);
+	int		array[20];
+	
 	i = 0;
-	while (n > 0)
+	numb_char = 0;
+	pf_bzero(array, 20);
+	while (n)
 	{
-		array[i++] = (n % 16);
+		array[i++] = n % 16;
 		n /= 16;
 	}
-	while (i > 0)
-		str[j++] = base[array[--i]];
-	numb_char += ft_pf_putnbr_hash_hex_fw2b(str, field_len, c);
+	if (len > i)
+		numb_char += len_is_big(field_len, len, i);
+	else
+		while (field_len > i)
+			{
+				numb_char += ft_pf_putchar(' ');
+				field_len --;
+			}
+	i = 0;
+	while(array[i])
+		numb_char += ft_pf_putchar(base[array[i++]]);
 	return (numb_char);
 }
 
-size_t	ft_pf_putnbr_hash_hex_fw2b(char *str, size_t field_len, char c)
+size_t len_is_big(size_t field_len, size_t len, size_t i)
 {
 	size_t	numb_char;
-	size_t	len;
 
 	numb_char = 0;
-	len = ft_strlen(str);
-	while (len < field_len)
+	while (field_len > len)
 	{
 		numb_char += ft_pf_putchar(' ');
-		field_len--;
+		field_len --;
 	}
-	numb_char += print_base(c);
-	numb_char += ft_pf_putstr(str);
+	while (len > i)
+	{
+		numb_char += ft_pf_putchar('0');
+		len--;
+	}
 	return (numb_char);
 }

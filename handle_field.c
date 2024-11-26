@@ -3,28 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   handle_field.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:15:08 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 16:23:16 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 20:04:05 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	handle_field(va_list args, char **format, size_t nb_ch, \
-size_t f_len)
+size_t	handle_field(va_list args, char **format, size_t nb_ch)
 {
+	size_t	f_len;
+
+	f_len = field_size(format);
+
 	if (**format == 'c')
 		nb_ch += ft_pf_putchar_fw(va_arg(args, int), f_len);
-	else if ((**format == '.' && *(*format + 1) == 'd' ) || \
-	(**format == '.' && (*(*format + 1) >= '1' || *(*format + 1) <= '9')))
-	{
-		(*format)++;
-		nb_ch += analize_dot_fw(va_arg(args, int), nb_ch, format, f_len);
-	}
-	else if (**format == 's' || **format == '.')
-		nb_ch += ft_pf_putstr_fw(va_arg(args, char *), f_len, format, nb_ch);
+	else if (**format == '.')
+		nb_ch += analize_dot_fw(args, nb_ch, format, f_len);
+	else if (**format == 's')
+		nb_ch += ft_pf_putstr_fw(va_arg(args, char *), f_len, nb_ch);
 	else if (**format == 'p')
 		nb_ch += ft_pf_putnbr_p_fw(va_arg(args, unsigned long), BASE_L, f_len);
 	else if (**format == 'd' || **format == 'i')

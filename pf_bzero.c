@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pf_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:55:24 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 14:57:50 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:12:07 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	pf_bzero(void *ptr, size_t n)
+void	*pf_bzero(void *ptr, size_t n)
 {
 	unsigned int	i;
 	char			*str;
@@ -21,4 +21,5 @@ void	pf_bzero(void *ptr, size_t n)
 	str = (char *)ptr;
 	while (i < n)
 		str[i++] = '\0';
+	return (str);
 }

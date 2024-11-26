@@ -3,24 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   analize_dot_fw.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 13:59:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 16:40:29 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 21:31:14 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	analize_dot_fw(int numb, size_t numb_char, \
-char **format, size_t field_len)
+size_t	analize_dot_fw(va_list args, size_t numb_char, char **format, \
+size_t field_len)
 {
-	if (**format == 'd')
-		numb_char += ft_pf_putnbr_fw(numb, field_len);
-	if (**format >= 1 || **format <= 9)
-	{
-		(*format)++;
-		numb_char += ft_pf_putnbr_fw(numb, field_len);
-	}
+	size_t count;
+	size_t len;
+
+	(*format)++;
+	len = ft_pf_atoi(*format);
+	count = count_decimal(len);
+	go_foward_array(format, count);
+	if (**format == 's')
+		numb_char += ft_pf_fw_dot_s(va_arg(args, char *), len, \
+		field_len);
+	if (**format == 'x')
+		numb_char += ft_pf_fw_dot_hex(va_arg(args, unsigned long), len, \
+		field_len, BASE_L);
+	if (**format == 'X')
+		numb_char += ft_pf_fw_dot_hex(va_arg(args, unsigned long), len, \
+		field_len, BASE_U);
+	if (**format == 'd' || **format == 'i')
+		numb_char += ft_pf_fw_dot(va_arg(args, int), len, field_len);
+	if (**format == 'u')
+		numb_char += 16;
 	return (numb_char);
 }

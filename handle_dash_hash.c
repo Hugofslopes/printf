@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dash_hash.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 14:26:38 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 15:00:59 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:20:48 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,18 @@ size_t handle_dash_hash(va_list args, char **format, size_t numb_char)
 	count = count_decimal(len);
 	go_foward_array(format, count);
 	if (**format == '.')
-		numb_char += putnbr_hash_fw_dot(va_arg(args, unsigned long), \
+		numb_char += putnbr_hash_dash_dot(va_arg(args, unsigned long), \
 		format, numb_char, len);
 	else
 	{
 		if (**format == 'x')
-		{
-			numb_char += ft_pf_putnbr_hash_hex_fw2(va_arg(args, unsigned long), \
+			numb_char += ft_pf_putnbr_hash_hex_dash(va_arg(args, unsigned long), \
 		BASE_L, len - 2, 'l');
-		}
 		if (**format == 'X')
-		{
-			numb_char += ft_pf_putstr("0x");
-			numb_char += ft_pf_putnbr_hash_hex_fw2(va_arg(args, unsigned long), \
+			numb_char += ft_pf_putnbr_hash_hex_dash(va_arg(args, unsigned long), \
 			BASE_U, len - 2, 'u');
-		}
 	}
+	(*format)++;
 	return (numb_char);
 }
 size_t	putnbr_hash_dash_dot(unsigned long n, char **format, size_t numb_char, \
