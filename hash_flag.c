@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:08:59 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 15:29:08 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:30:24 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	hash_flag(va_list args, char **format, size_t numb_char)
 	else if (**format == '.')
 		numb_char += handle_dot_hash(va_arg(args, unsigned long), format, \
 		numb_char);
+	else if (**format == '-')
+		numb_char += handle_dash_hash(args, format, numb_char);
 	else
 	{
 		if (**format == 'x')

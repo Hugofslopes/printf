@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 15:32:29 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:26:37 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	size_t	i;
 	size_t	numb_char;
 	char	*s;
 
-	i = 0;
 	numb_char = 0;
 	va_start(args, str);
 	s = (char *)str;
@@ -27,7 +25,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*s == '%')
 		{
-			numb_char += select_formats(args, &s - i, numb_char);
+			numb_char += select_formats(args, &s, numb_char);
 			if (*s)
 				s++;
 		}
@@ -40,6 +38,7 @@ int	ft_printf(const char *str, ...)
 
 size_t	select_formats(va_list args, char **format, size_t numb_char)
 {
+	(*format)++;
 	if (**format == 'c')
 		numb_char += ft_pf_putchar(va_arg(args, int));
 	else if (**format == 's')
@@ -65,7 +64,7 @@ size_t	analize_flags(va_list args, char **format, size_t numb_char)
 {
 	size_t	field_len;
 
-	field_len = field_size(**format);
+	field_len = field_size(format);
 	while (**format)
 	{
 		while (**format == '#' || **format == '+' || **format == '0' || \

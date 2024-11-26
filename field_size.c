@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 11:55:41 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 16:17:41 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 14:59:18 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	field_size(char **format)
 	size_t			i;
 	unsigned int	field_len;
 
-	pf_bzero(&array, 11);
+	pf_bzero(array, 11);
 	i = 0;
 	field_len = 0;
 	while (**format >= '0' && **format <= '9')

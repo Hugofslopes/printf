@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_bzero.c                                         :+:      :+:    :+:   */
+/*   test_printf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 13:55:24 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 14:57:50 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 13:54:38 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/26 15:27:57 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
+//#include "colors.h"
+#include <stdio.h>
 
-void	pf_bzero(void *ptr, size_t n)
+int main()
 {
-	unsigned int	i;
-	char			*str;
+	//printf("%#-10.5x", 2);
+	//puts (" ");
+	ft_printf("%#-10.5x", 2);
+	// puts ("\n");
 
-	i = 0;
-	str = (char *)ptr;
-	while (i < n)
-		str[i++] = '\0';
+	// ft_printf("%#5x", 255);
+	// puts (" ");
+	// printf("%#5x", 255);
+	// puts ("\n");
+
+	// ft_printf("%#.5x", 255);
+	// puts (" ");
+	// printf("%#.5x", 255);
+	// puts ("\n");
+	
+	// ft_printf("%#10.5x", 255);
+	// puts (" ");
+	// printf("%#10.5x", 255);
+	// puts ("\n");
 }

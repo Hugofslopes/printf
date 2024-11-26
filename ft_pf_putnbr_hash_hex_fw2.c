@@ -1,55 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putnbr_fw.c                                  :+:      :+:    :+:   */
+/*   ft_pf_putnbr_hash_hex_fw2.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/22 15:43:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 15:08:46 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/26 12:51:00 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/26 15:17:13 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putnbr_fw(int n, size_t field_len)
+size_t	ft_pf_putnbr_hash_hex_fw2(unsigned long n, char *base, \
+size_t field_len, char c)
 {
-	long int	numb;
-	char		array[20];
-	size_t		i;
-	size_t		numb_char;
+	size_t	numb_char;
+	int		array[11];
+	size_t	i;
+	size_t	j;
+	char	str[10];
 
+	j = 0;
 	numb_char = 0;
-	numb = n;
+	pf_bzero(&str, 10);
 	i = 0;
-	if (numb < 0)
-		numb = -numb;
-	if (numb == 0)
-		array[i++] = 48;
-	while (numb > 0)
+	while (n > 0)
 	{
-		array[i++] = (numb % 10) + '0';
-		numb /= 10;
+		array[i++] = (n % 16);
+		n /= 16;
 	}
-	numb_char += ft_pf_putnbr_fw2(n, field_len, i, array);
+	while (i > 0)
+		str[j++] = base[array[--i]];
+	numb_char += ft_pf_putnbr_hash_hex_fw2b(str, field_len, c);
 	return (numb_char);
 }
 
-size_t	ft_pf_putnbr_fw2(int n, size_t field_len, size_t i, char *array)
+size_t	ft_pf_putnbr_hash_hex_fw2b(char *str, size_t field_len, char c)
 {
 	size_t	numb_char;
 	size_t	len;
+	size_t	j;
 
 	numb_char = 0;
-	len = ft_strlen(array);
-	while ((size_t)len < field_len)
+	len = ft_strlen(str);
+	j = 0;
+	while (len < field_len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;
 	}
-	if (n < 0)
-		numb_char += ft_pf_putchar('-');
-	while (i > 0)
-		numb_char += ft_pf_putchar(array[--i]);
+	numb_char += print_base(c);
+	numb_char += ft_pf_putstr(str);
 	return (numb_char);
 }

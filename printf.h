@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 16:04:05 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:17:30 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,23 @@ size_t			ft_pf_putnbr_hash_hex_fw2(unsigned long n, char *base, \
 size_t field_len, char c);
 size_t			handle_dot2(va_list args, char **format, size_t nb_ch, \
 size_t len);
-void			pf_bzero(char **ptr, size_t n);
+size_t			print_base(char c);
+size_t 			handle_dash_hash(va_list args, char **format, \
+size_t numb_char);
+size_t			putnbr_hash_dash_dot(unsigned long n, char **format, \
+size_t numb_char, size_t len);
+size_t			handle_field(va_list args, char **format, size_t nb_ch, \
+size_t f_len);
+size_t			put_sign_d(va_list args, size_t numb_char);
+void			pf_bzero(void *ptr, size_t n);
+size_t			ft_pf_putnbr_hex_fwb(char *str, size_t field_len);
+size_t			ft_pf_putnbr_p_fw3(char *str, size_t field_len);
+size_t			ft_pf_putnbr_fw2(int n, size_t field_len, size_t i, \
+char *array);
+size_t			ft_pf_putnbr_dot2(int n, size_t field_len, \
+char *array, size_t i);
+size_t	ft_pf_putnbr_hash_hex_fw2b(char *str, size_t field_len, char c);
+
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 #endif

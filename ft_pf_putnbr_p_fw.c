@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:45:03 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 16:14:02 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:05:59 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ size_t	ft_pf_putnbr_p_fw(unsigned long n, char *base, size_t field_len)
 	char	str[10];
 	size_t	numb_char;
 
+	numb_char = 0;
 	pf_bzero(&str, 10);
 	if (n == 0)
 	{
@@ -36,11 +37,11 @@ size_t	ft_pf_putnbr_p_fw(unsigned long n, char *base, size_t field_len)
 	j = 0;
 	while (i > 0)
 		str[j++] = base[array[--i]];
-	numb_char += ft_pf_putnbr_p_fw3(i, str, base, field_len);
+	numb_char += ft_pf_putnbr_p_fw3(str, field_len);
 	return (numb_char);
 }
 
-size_t	ft_pf_putnbr_p_fw3(size_t i, char *str, char *base, size_t field_len)
+size_t	ft_pf_putnbr_p_fw3(char *str, size_t field_len)
 {
 	size_t	numb_char;
 	size_t	j;
