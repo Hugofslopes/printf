@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_fw_dot.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:16:27 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 11:06:10 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/27 19:14:48 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ size_t ft_pf_fw_dot(int nb, size_t len, size_t field_len)
 		n /= 10;
 	}
 	number_char += ft_pf_fw_dotb((size_t)i, len, field_len, nb);
-	while (i >= 0)
-		number_char += ft_pf_putchar(array[i--] + 48 );
+	while (i > 0)
+		number_char += ft_pf_putchar(array[--i] + 48 );
 	return (number_char);
 }
 
@@ -56,7 +56,7 @@ size_t ft_pf_fw_dotb(size_t i, size_t len, size_t field_len, int nb)
 		}
 		if (nb < 0)
 			number_char += ft_pf_putchar('-');
-		while (len > i + 1)
+		while (len > i)
 		{
 			number_char += ft_pf_putchar('0');
 			len--;
