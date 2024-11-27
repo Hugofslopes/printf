@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 21:18:17 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:11:09 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,7 @@ size_t	analize_dot_fw(va_list args, size_t numb_char, char **format, \
 size_t field_len);
 unsigned int	count_decimal(int nbr);
 void			go_foward_array(char **array, size_t numb);
-size_t			ft_pf_putstr_dot(va_list args, size_t numb_char, \
-size_t len, char **format);
+size_t			ft_pf_putstr_dot(va_list args, size_t numb_char, size_t len);
 size_t			ft_putnbr_hex_dot(unsigned long n, size_t numb_char, \
 size_t n_zeros, char *base);
 size_t			ft_pf_putnbr_ui_dot(unsigned int n, size_t field_len);
@@ -107,6 +106,38 @@ size_t			ft_pf_fw_dot_hex(unsigned long n, size_t len, \
 size_t field_len, char *base);
 size_t			len_is_big(size_t field_len, size_t len, size_t i);
 size_t			ft_pf_fw_dot(int i, size_t len, size_t field_len);
+size_t 			ft_pf_fw_dotb(size_t i, size_t len, size_t field_len, int nb);
+size_t 			ft_pf_fw_dot_ub(size_t i, size_t len, size_t field_len);
+size_t			ft_pf_fw_dot_u(unsigned int nb, size_t len, size_t field_len);
+size_t 			ft_pf_fw_dotneg(size_t i, size_t len, size_t field_len, int nb);
+size_t			handle_dashb(va_list args, char **format, size_t nb_ch, \
+size_t f_len);
+size_t			ft_pf_putchar_dash(char c, size_t field_len);
+size_t			ft_pf_putstr_dash(char *s, size_t field_len, size_t numb_char);
+size_t			ft_pf_putnbr_p_dash(unsigned long n, char *base, \
+size_t field_len);
+size_t			ft_pf_putnbr_p_dash2(char *str, size_t field_len);
+size_t			ft_pf_putnbr_dash(int n, size_t field_len);
+size_t			ft_pf_putnbr_dash2(int n, size_t field_len, size_t i, \
+char *array);
+size_t			ft_pf_putnbr_ui_dash(unsigned int n, size_t field_len);
+size_t			ft_pf_putnbr_hex_dash(unsigned long n, char *base, \
+size_t field_len);
+size_t			ft_pf_putnbr_hex_dashb(char *str, size_t field_len);
+size_t			handle_dash_dot(va_list args, size_t numb_char, char **format, \
+size_t field_len);
+size_t			ft_pf_dash_dot(int nb, size_t len, size_t field_len);
+size_t			ft_pf_dash_dotb(size_t i, size_t len, size_t field_len, int nb);
+size_t 			ft_pf_dash_dotneg(size_t i, size_t len, size_t field_len, \
+int nb);
+size_t			ft_pf_dash_dot_s(char *str, size_t len, size_t field_len);
+size_t			ft_pf_dash_dot_u(unsigned int nb, size_t len, size_t field_len);
+size_t 			ft_pf_dash_dot_ub(size_t i, size_t len);
+size_t 			ft_pf_dash_dot_uc(size_t i, size_t len, size_t field_len);
+size_t			ft_pf_dash_dot_hex(unsigned long n, size_t len, \
+size_t field_len, char *base);
+size_t 			len_is_big_dash(size_t len, size_t i);
+size_t 			ft_pf_dash_dotc(size_t i, size_t len, size_t field_len);
 
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);

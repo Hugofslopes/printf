@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_zero.c                                      :+:      :+:    :+:   */
+/*   ft_pf_putstr_dash.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:40:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 15:31:42 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/22 14:49:58 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/27 13:20:55 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	handle_zero(va_list args, char **format, size_t numb_char)
+size_t	ft_pf_putstr_dash(char *s, size_t field_len, size_t numb_char)
 {
-	(*format)++;
-	if (**format >= '1' && **format <= '9')
-		numb_char += handle_field(args, format, numb_char);
+	size_t	str_len;
+
+	if (!s)
+	{
+		ft_pf_putstr("(null)");
+		return (6);
+	}
+	numb_char = 0;
+	str_len = ft_strlen(s);
+	while (*s)
+		numb_char += ft_pf_putchar(*s++);
+	while (field_len > str_len)
+	{
+		numb_char += ft_pf_putchar(' ');
+		field_len--;
+	}
 	return (numb_char);
 }

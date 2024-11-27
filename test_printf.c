@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_printf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:54:38 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 21:06:46 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:23:16 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,19 @@
 
 int main()
 {
+	//char *str = "'%3.7s%7.7s'\n";
 
-	ft_printf("%d", ft_printf("%20.10x", 255));
-	puts (" ");
-	printf("%d", printf("%20.10x", 255));
-	// puts ("\n");
-
-	// ft_printf("%#5x", 255);
+	//ft_printf("\t%d", ft_printf("%7.7s", "whirl"));
 	// puts (" ");
-	// printf("%#5x", 255);
-	// puts ("\n");
-
-	// ft_printf("%#.5x", 255);
+	//printf("\t%d", printf(str, "hello", "whirl"));
 	// puts (" ");
-	// printf("%#.5x", 255);
-	// puts ("\n");
+	//printf("\t%d", printf("'%.0s'", NULL));
+	// 
+	//printf(str, "hello", "whirl");
+	printf( "'%.09s'", "s_n");	
+	ft_printf( "'%.09s'", "s_n");	
+
 	
-	// ft_printf("%#10.5x", 255);
-	// puts (" ");
-	// printf("%#10.5x", 255);
-	// puts ("\n");
+	
+	
 }

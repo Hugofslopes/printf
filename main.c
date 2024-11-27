@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:01:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 18:37:41 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:01:30 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void decimal(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%d", 345));
+	fflush(stdout);
 	puts("\n");
 	
 	puts(BG_WHITE BLUE"BIG NUMBER"RESET);
@@ -66,6 +67,7 @@ void decimal(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%d", 2147483647));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST DECIMAL"RESET);
@@ -74,6 +76,7 @@ void decimal(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%d", a));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST DASH"RESET);
@@ -82,6 +85,7 @@ void decimal(void)
 	puts (" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%-5d", a));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"TEST SPACE WITH NUMBER"RESET);
@@ -90,6 +94,7 @@ void decimal(void)
 	puts (" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%05d", a));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"TEST PLUS SIGN WITH POSITIVE"RESET);
@@ -98,6 +103,7 @@ void decimal(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%+d", 1));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"TEST PLUS SIGN WITH NEGATIVE"RESET);
@@ -106,6 +112,7 @@ void decimal(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%+d", -1));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"TEST DOT FLAG WITH 2"RESET);
@@ -114,6 +121,7 @@ void decimal(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("%.2d", 1));
+	fflush(stdout);
 	puts ("\n");
 }
 void unsigneds(void)
@@ -127,6 +135,7 @@ void unsigneds(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%u",u));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST UNSIGNED"RESET);
@@ -135,14 +144,34 @@ void unsigneds(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%u",u2));
+	fflush(stdout);
 	puts("\n");
 
-	puts(BG_WHITE BLUE"TEST FIELD WITH UNSIGNED"RESET);
+	puts(BG_WHITE BLUE"TEST FIELD_W UNSIGNED"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%12u", u));		
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%12u", u));
+	fflush(stdout);
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST FIELD_W 20 WITH DOT 10 WITH NEG UNSIGNED"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%20.10u", -255));		
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%20.10u", -255));
+	fflush(stdout);
+	puts("\n");
+
+	puts(BG_WHITE BLUE"TEST FIELD_W 20 WITH DOT 10 UNSIGNED"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%20.10u", 255));		
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%20.10u", 255));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST . FLAG WITH 15"RESET);
@@ -151,6 +180,7 @@ void unsigneds(void)
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%.15u", -1));
+	fflush(stdout);
 	puts("\n");
 }
 void l_hexa(void)
@@ -161,49 +191,71 @@ void l_hexa(void)
 	puts(BG_WHITE BLUE"TEST HEXA L_CASE WITH #"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- "RESET);
 	ft_printf("\t%d", ft_printf("\t%#x",X));
+	fflush(stdout);
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%#x",X));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST HEXA L_CASE WITHOUT #"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- "RESET);
 	ft_printf("\t%d", ft_printf("\t%x",X));
+	fflush(stdout);
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%x",X));
+	fflush(stdout);
 	puts("\n");
 
-	puts(BG_WHITE BLUE"FIELD WITH HEXA"RESET);
+	puts(BG_WHITE BLUE"FIELD_W HEXA"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%10x", 0x123));
+	fflush(stdout);
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%10x", 0x123));				
+	printf("\t%d", printf("%10x", 0x123));
+	fflush(stdout);		
+	puts("\n");
+
+	puts(BG_WHITE BLUE"DASH 15 WITH 10 DOT HEXA"RESET);
+	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
+	ft_printf("\t%d", ft_printf("%-15.10x", 0x123));
+	fflush(stdout);
+	puts(" ");
+	printf(CYAN"PRINTF- \t"RESET);
+	printf("\t%d", printf("%-15.10x", 0x123));
+	fflush(stdout);		
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST . FLAG WITH 5"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%.5x", 255));
+	fflush(stdout);
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%.5x", 255));				
+	printf("\t%d", printf("%.5x", 255));
+	fflush(stdout);		
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST FIELD_W 10 WITH . FLAG WITH 5"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%#10.5x", 255));
+	fflush(stdout);
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%#10.5x", 255));				
+	printf("\t%d", printf("%#10.5x", 255));
+	fflush(stdout);	
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST L_ALIGN 10 WITH . FLAG WITH 5"RESET);
 	ft_printf(MAGENTA"FT_PRINTF- \t"RESET);
 	ft_printf("\t%d", ft_printf("%#-10.5x", 255));
+	fflush(stdout);
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%#-10.5x", 255));				
+	printf("\t%d", printf("%#-10.5x", 255));
+	fflush(stdout);			
 	puts("\n");
 	
 }
@@ -218,6 +270,7 @@ void u_hexa(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%#X",X));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST HEXA U_CASE WITHOUT #"RESET);
@@ -226,6 +279,7 @@ void u_hexa(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%X",X));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST . FLAG WITH 5"RESET);
@@ -233,7 +287,8 @@ void u_hexa(void)
 	ft_printf("\t%d", ft_printf("%.5X", 255));
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%.5X", 255));				
+	printf("\t%d", printf("%.5X", 255));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST FIELD_W 10 WITH . FLAG WITH 5"RESET);
@@ -241,7 +296,8 @@ void u_hexa(void)
 	ft_printf("\t%d", ft_printf("%#10.5X", 255));
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%#10.5X", 255));				
+	printf("\t%d", printf("%#10.5X", 255));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST L_ALIGN 10 WITH . FLAG WITH 5"RESET);
@@ -249,7 +305,8 @@ void u_hexa(void)
 	ft_printf("\t%d", ft_printf("%#-10.5X", 255));
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%#-10.5X", 255));				
+	printf("\t%d", printf("%#-10.5X", 255));
+	fflush(stdout);	
 	puts("\n");
 }
 
@@ -264,6 +321,7 @@ void percentage(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%%"));
+	fflush(stdout);
 	puts("\n");
 }
 void chars(void)
@@ -277,6 +335,7 @@ void chars(void)
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%c", 'a'));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"FIELD SIZE 7 WITH CHAR"RESET);
@@ -285,6 +344,7 @@ void chars(void)
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
 	printf("\t%d", printf("%7c", 'a'));
+	fflush(stdout);
 	puts ("\n");
 }
 void strs(void)
@@ -300,6 +360,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%s",ola));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST STRING WITH TEXT AFTER"RESET);
@@ -308,6 +369,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d",printf("\t%sola",ola));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST STRING WITH TEXT BEFORE"RESET);
@@ -316,6 +378,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\tola%s",ola));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST DOT WITH STR (5 CHAR)"RESET);
@@ -324,6 +387,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%.5s", ola));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"TEST DOT WITH STR (2 CHAR)"RESET);
@@ -332,6 +396,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%.2s", ola));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"TEST DOT WITH STR (0 CHAR)"RESET);
@@ -340,6 +405,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%.0s", ola));
+	fflush(stdout);
 	puts ("\n");
 
 	puts(BG_WHITE BLUE"FIELD SIZE 7 WITH STR"RESET);
@@ -347,7 +413,8 @@ void strs(void)
 	ft_printf("\t%d", ft_printf("%7s", "ola"));
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%7s", "ola"));			
+	printf("\t%d", printf("%7s", "ola"));
+	fflush(stdout);			
 	puts("\n");
 
 	puts(BG_WHITE BLUE"FIELD SIZE 7 WITH DOT FLAG 2 STR"RESET);
@@ -355,7 +422,8 @@ void strs(void)
 	ft_printf("\t%d", ft_printf("%7.2s", "ola"));
 	puts(" ");
 	printf(CYAN"PRINTF- \t"RESET);
-	printf("\t%d", printf("%7.2s", "ola"));			
+	printf("\t%d", printf("%7.2s", "ola"));
+	fflush(stdout);		
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST NULL STR"RESET);
@@ -364,6 +432,7 @@ void strs(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%s",b));
+	fflush(stdout);
 	puts("\n");
 
 }
@@ -380,6 +449,7 @@ void pointer(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%p",ola));
+	fflush(stdout);
 	puts("\n");
 
 	puts(BG_WHITE BLUE"TEST NULL POINTER"RESET);
@@ -388,6 +458,7 @@ void pointer(void)
 	puts(" ");
 	printf(CYAN"PRINTF- "RESET);
 	printf("\t%d", printf("\t%p",b));
+	fflush(stdout);
 	puts("\n");
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 20:01:06 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:03:01 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*s == '%')
 			numb_char += select_formats(args, &s);
-		if (*s)
+		if (*s && *s != '%')
 			numb_char += ft_pf_putchar(*s++);
 	}
 	va_end(args);
@@ -64,7 +64,7 @@ size_t	analize_flags(va_list args, char **format, size_t numb_char)
 {
 	while (**format == '#' || **format == '+' || **format == '0' || \
 	**format == '-' || **format == '.' || (**format >= '1' && \
-	**format <= '9'))
+	**format <= '9') || **format == ' ')
 	{
 		if (**format == '#')
 			numb_char += hash_flag(args, format, numb_char);
@@ -76,7 +76,7 @@ size_t	analize_flags(va_list args, char **format, size_t numb_char)
 			numb_char += handle_dash(args, format, numb_char);
 		if (**format == '.')
 			numb_char += handle_dot(args, format, numb_char);
-		if (**format == ' ')
+		if (**format == 32)
 			numb_char += handle_empty_space(args, format, numb_char);
 		if (**format >= '1' && **format <= '9')
 			numb_char += handle_field(args, format, numb_char);

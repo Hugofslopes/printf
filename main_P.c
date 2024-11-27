@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_P.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:34:25 by passunca          #+#    #+#             */
-/*   Updated: 2024/11/24 12:52:15 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:46:10 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void test_f(void);
 
 int main(void)
 {
-	test_c();
+	//test_c();
 	test_s();
-	test_di();
-	test_u();
-	test_x();
-	test_f();
+	// test_di();
+	// test_u();
+	// test_x();
+	// test_f();
 
 	return (0);
 }
@@ -57,9 +57,9 @@ void test_c(void)
 	str = "'%3c...%2c'\n";
 	printf(str, 'z', 'Z');
 	ft_printf(str, 'z', 'Z');
-	//printf("'%5%'\n");
+	printf("'%5%'\n");
 	ft_printf("'%5%'\n");	
-	//printf("'%-5%'\n");
+	printf("'%-5%'\n");
 	ft_printf("'%-5%'\n");
 }
 
@@ -70,21 +70,21 @@ void test_s(void)
 	char *str = NULL;
 	char *s_hidden = "Zedr0\0asdasd\0";
 	static char *s_hidden2 = "hi low\0don't print me lol\0";
-	ft_putstr_fd(SEP, 1);
-	ft_test(1, "'%-7.3s'", "Zedro0");
-	ft_test(2, "'%7.3s'", "Zedro0");
-	ft_test(3, "'%07.3s'", "Zedro0");
-	ft_test(4, "'%10.s'", s_hidden);
-	ft_test(5, "'%3.s'", NULL);
-	ft_putstr_fd(SEP, 1);
-	ft_putstr_fd("Test6:\n", 1);
-	printf("'%3s%2s'\n","Zedr0 ", "Blah blah");
-	ft_printf("'%3s%2s'\n","Zedr0 ", "Blah blah");
-	ft_test(7, "'% 7.3s'", "Zedro0");
-	ft_test(8, "'%-7.3s'", "Zedro0");
-	ft_test(9, "'%7.3s'", "Zedro0");
-	ft_test(10, "'%.s'", "Zedro0");
-	ft_test(11, "'%.0s'", "Zedro0");
+	// ft_putstr_fd(SEP, 1);
+	// ft_test(1, "'%-7.3s'", "Zedro0");
+	// ft_test(2, "'%7.3s'", "Zedro0");
+	// ft_test(3, "'%07.3s'", "Zedro0");
+	// ft_test(4, "'%10.s'", s_hidden);
+	// ft_test(5, "'%3.s'", NULL);
+	// ft_putstr_fd(SEP, 1);
+	// ft_putstr_fd("Test6:\n", 1);
+	// printf("'%3s%2s'\n","Zedr0 ", "Blah blah");
+	// ft_printf("'%3s%2s'\n","Zedr0 ", "Blah blah");
+	// ft_test(7, "'% 7.3s'", "Zedro0");
+	// ft_test(8, "'%-7.3s'", "Zedro0");
+	// ft_test(9, "'%7.3s'", "Zedro0");
+	// ft_test(10, "'%.s'", "Zedro0");
+	// ft_test(11, "'%.0s'", "Zedro0");
 	ft_test(12, "'%.0s'", NULL);
 	
 	ft_putstr_fd(SEP, 1);
@@ -95,7 +95,6 @@ void test_s(void)
 	str = "'%7.7s%3.7s'\n";
 	printf(str, "hello", "whirl");
 	ft_printf(str, "hello", "whirl");	
-	 //
 	ft_test(2, "'%3.s'", "Zedr0\0crashTest");
 	ft_test(3, "'%.0s'", s_hidden);
 	ft_test(4, "'%.7s'", "Zedr0");
@@ -168,7 +167,7 @@ void test_di(void)
 	char *str = "'%-9d'\n";
 	printf(str, INT_MIN);
 	ft_printf(str, INT_MIN);
-	// 
+	
 	printf("Test15:\n");
 	char *str2 = "'%7i'\n";
 	printf(str2, -14);
