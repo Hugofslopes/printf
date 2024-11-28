@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:44:42 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 15:02:19 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:29:02 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ size_t	ft_pf_putnbr_hash_fw(va_list args, char **format, size_t numb_char)
 	size_t	len;
 	size_t	count;
 
+	numb_char = 0;
 	len = ft_pf_atoi(*format);
 	count = count_decimal(len);
 	go_foward_array(format, count);
@@ -35,16 +36,11 @@ size_t	ft_pf_putnbr_hash_fw(va_list args, char **format, size_t numb_char)
 	else
 	{
 		if (**format == 'x')
-		{
 			numb_char += ft_pf_putnbr_hash_hex_fw2(va_arg(args, unsigned long), \
 		BASE_L, len - 2, 'l');
-		}
 		if (**format == 'X')
-		{
-			numb_char += ft_pf_putstr("0x");
 			numb_char += ft_pf_putnbr_hash_hex_fw2(va_arg(args, unsigned long), \
 			BASE_U, len - 2, 'u');
-		}
 	}
 	return (numb_char);
 }
@@ -57,6 +53,7 @@ size_t len)
 	size_t	array_size;
 
 	(*format)++;
+	numb_char = 0;
 	dot_len = ft_pf_atoi(*format);
 	count = count_decimal(dot_len);
 	go_foward_array(format, count);
@@ -65,15 +62,13 @@ size_t len)
 	if (**format == 'x')
 	{
 		numb_char += ft_pf_putstr("0x");
-		numb_char += ft_putnbr_hex_dot(n, numb_char, dot_len, BASE_L);
+		numb_char += ft_putnbr_hex_dot(n, 0, dot_len, BASE_L);
 	}
 	if (**format == 'X')
 	{
 		numb_char += ft_pf_putstr("0X");
-		numb_char += ft_putnbr_hex_dot(n, numb_char, dot_len, BASE_U);
+		numb_char += ft_putnbr_hex_dot(n, 0, dot_len, BASE_U);
 	}
-	return (numb_char);
-	(*format)++;
 	return (numb_char);
 }
 

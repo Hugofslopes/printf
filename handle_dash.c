@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:54:16 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 14:35:09 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:58:17 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	handle_dash(va_list args, char **format, size_t nub_ch)
 	size_t count;
 
 	(*format)++;
+	if (**format == '0')
+		(*format)++;
 	len = ft_pf_atoi(*format);
 	count = count_decimal(len);
 	go_foward_array(format, count);

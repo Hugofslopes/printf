@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_fw_dot_hex.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 20:50:22 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 21:15:35 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:02:19 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ size_t ft_pf_fw_dot_hex(unsigned long n, size_t len, size_t field_len, char *bas
 				numb_char += ft_pf_putchar(' ');
 				field_len --;
 			}
-	i = 0;
-	while(array[i])
-		numb_char += ft_pf_putchar(base[array[i++]]);
+	while (i > 0)
+		numb_char += ft_pf_putchar(base[array[--i]]);
 	return (numb_char);
 }
 

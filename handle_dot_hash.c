@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pf_putstr_dot.c                                 :+:      :+:    :+:   */
+/*   handle_dot_hash.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 10:20:37 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 13:43:20 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/11/21 11:08:59 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/11/28 10:54:14 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_pf_putstr_dot(va_list args, size_t numb_char, size_t len)
+size_t	handle_dot_hash(unsigned long nbr, char **format, size_t numb_char)
 {
-	const char	*str;
+	size_t	len;
+	size_t	count;
 
-	numb_char = 0;
-	str = (const char *)va_arg(args, char *);
-	if (!str)
-			return (0);
-	if (len > ft_strlen(str))
+	(*format)++;
+	len = ft_pf_atoi(*format);
+	count = count_decimal(len);
+	go_foward_array(format, count);
+	if (**format == 'x')
 	{
-		while (*str)
-			numb_char += ft_pf_putchar(*str++);
+		numb_char += ft_pf_putstr("0x");
+		numb_char += ft_putnbr_hex_dot(nbr, numb_char, len, BASE_L);
 	}
-	else
+	if (**format == 'X')
 	{
-		while (len >= 1)
-		{
-			numb_char += ft_pf_putchar(*str++);
-			len--;
-		}
+		numb_char += ft_pf_putstr("0x");
+		numb_char += ft_putnbr_hex_dot(nbr, numb_char, len, BASE_U);
 	}
 	return (numb_char);
 }

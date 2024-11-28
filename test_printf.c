@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_printf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 13:54:38 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 19:18:51 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:59:41 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 int main()
 {
-printf("' :% d'\n", -42);
-	ft_printf("' :% d'\n", -42);
+	char *ptr = "Zedr0";
+	ft_printf("'%02.13X'", ptr); 
+	 puts (" ");
+	//printf("'%02.13X'", ptr);
 
-	//ft_printf("\t%d", ft_printf("%7.7s", "whirl"));
-	// puts (" ");
 	//printf("\t%d", printf(str, "hello", "whirl"));
 	// puts (" ");
 	//printf("\t%d", printf("'%.0s'", NULL));
@@ -28,7 +28,4 @@ printf("' :% d'\n", -42);
 	//printf(str, "hello", "whirl");
 
 
-	
-	
-	
-}
+}	

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 19:31:52 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 11:30:22 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,12 @@ size_t field_len, char *base);
 size_t 			len_is_big_dash(size_t len, size_t i);
 size_t 			ft_pf_dash_dotc(size_t i, size_t len, size_t field_len);
 size_t			ft_pf_putnbr_empty(int n);
-
+size_t			handle_dot_hash(unsigned long nbr, char **format, \
+size_t numb_char);
+size_t			ft_putnbr_hex_hash_dot(unsigned long n, size_t dash_len, \
+size_t n_zeros, char *base);
+size_t			ft_putnbr_hex_hash_dotb(char *str, size_t dash_len, \
+size_t n_zeros);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 #endif

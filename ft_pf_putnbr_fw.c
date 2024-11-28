@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:43:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 15:08:46 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:20:07 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t	ft_pf_putnbr_fw(int n, size_t field_len)
 	size_t		i;
 	size_t		numb_char;
 
+	pf_bzero(array,20);
 	numb_char = 0;
 	numb = n;
 	i = 0;
@@ -42,7 +43,9 @@ size_t	ft_pf_putnbr_fw2(int n, size_t field_len, size_t i, char *array)
 
 	numb_char = 0;
 	len = ft_strlen(array);
-	while ((size_t)len < field_len)
+	if (n < 0)
+		len++;
+	while (field_len > (size_t)len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;

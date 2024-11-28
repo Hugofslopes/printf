@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:43:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 13:34:53 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:22:02 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ size_t	ft_pf_putnbr_dash(int n, size_t field_len)
 	numb_char = 0;
 	numb = n;
 	i = 0;
+	pf_bzero(array, 20);
 	if (numb < 0)
 		numb = -numb;
 	if (numb == 0)
@@ -46,7 +47,7 @@ size_t	ft_pf_putnbr_dash2(int n, size_t field_len, size_t i, char *array)
 		numb_char += ft_pf_putchar('-');
 	while (i > 0)
 		numb_char += ft_pf_putchar(array[--i]);
-	while ((size_t)len < field_len)
+	while (field_len > (size_t)len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;
