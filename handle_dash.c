@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dash.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:54:16 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 14:58:17 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:38:11 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	handle_dash(va_list args, char **format, size_t nub_ch)
 {
 	size_t	len;
-	size_t count;
+	size_t	count;
 
 	(*format)++;
 	if (**format == '0')
@@ -36,7 +36,8 @@ size_t	handle_dashb(va_list args, char **format, size_t nb_ch, size_t f_len)
 	else if (**format == 's')
 		nb_ch += ft_pf_putstr_dash(va_arg(args, char *), f_len, nb_ch);
 	else if (**format == 'p')
-		nb_ch += ft_pf_putnbr_p_dash(va_arg(args, unsigned long), BASE_L, f_len);
+		nb_ch += ft_pf_putnbr_p_dash(va_arg(args, unsigned long), \
+		BASE_L, f_len);
 	else if (**format == 'd' || **format == 'i')
 		nb_ch += ft_pf_putnbr_dash(va_arg(args, int), f_len);
 	else if (**format == 'u')

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_field.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:15:08 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 11:55:08 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:58:57 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ size_t	handle_field(va_list args, char **format, size_t nb_ch)
 	size_t	f_len;
 
 	f_len = field_size(format);
-
 	if (**format == 'c')
 		nb_ch += ft_pf_putchar_fw(va_arg(args, int), f_len);
 	else if (**format == '.')

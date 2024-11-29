@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_dash_dot_hex.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 20:50:22 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 14:49:53 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:07:01 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t ft_pf_dash_dot_hex(unsigned long n, size_t len, size_t field_len, char *base)
+size_t	ft_pf_dash_dot_hex(unsigned long n, size_t len, \
+size_t field_len, char *base)
 {
 	size_t	numb_char;
 	size_t	i;
-	int	j;
+	int		j;
 	int		array[20];
-	
+
 	i = 0;
 	numb_char = 0;
 	pf_bzero(array, 20);
@@ -30,17 +31,17 @@ size_t ft_pf_dash_dot_hex(unsigned long n, size_t len, size_t field_len, char *b
 	j = (int)i;
 	if (len > i)
 		numb_char += len_is_big_dash(len, i);
-	while(j)
+	while (j)
 		numb_char += ft_pf_putchar(base[array[--j]]);
 	while (field_len > i && field_len > len)
-		{
-			numb_char += ft_pf_putchar(' ');
-			field_len--;
-		}
+	{
+		numb_char += ft_pf_putchar(' ');
+		field_len--;
+	}
 	return (numb_char);
 }
 
-size_t len_is_big_dash(size_t len, size_t i)
+size_t	len_is_big_dash(size_t len, size_t i)
 {
 	size_t	numb_char;
 

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_hex_hash_dot.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:33:07 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 11:44:37 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:58:25 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-size_t	ft_putnbr_hex_hash_dot(unsigned long n, size_t dash_len, size_t n_zeros, \
-char *base)
+size_t	ft_putnbr_hex_hash_dot(unsigned long n, size_t dash_len, \
+size_t n_zeros, char *base)
 {
 	int		array[11];
 	size_t	i;
@@ -36,6 +36,7 @@ char *base)
 	numb_char += ft_putnbr_hex_hash_dotb(str, dash_len, n_zeros);
 	return (numb_char);
 }
+
 size_t	ft_putnbr_hex_hash_dotb(char *str, size_t dash_len, size_t n_zeros)
 {
 	size_t	numb_char;
@@ -55,10 +56,12 @@ size_t	ft_putnbr_hex_hash_dotb(char *str, size_t dash_len, size_t n_zeros)
 	len += 2;
 	numb_char += ft_pf_putstr(str);
 	if (dash_len > n_zeros2)
+	{
 		while (dash_len > n_zeros2 && dash_len > len)
 		{
 			numb_char += ft_pf_putchar(' ');
 			dash_len --;
 		}
+	}
 	return (numb_char);
 }

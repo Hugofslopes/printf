@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_fw.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:43:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 14:20:07 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:13:33 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_pf_putnbr_fw(int n, size_t field_len)
 	size_t		i;
 	size_t		numb_char;
 
-	pf_bzero(array,20);
+	pf_bzero(array, 20);
 	numb_char = 0;
 	numb = n;
 	i = 0;

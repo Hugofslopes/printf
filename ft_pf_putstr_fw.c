@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 14:49:58 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 19:10:11 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:59:44 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ size_t	ft_pf_putstr_fw(char *s, size_t field_len, size_t numb_char)
 	}
 	while (*s)
 		numb_char += ft_pf_putchar(*s++);
-
 	return (numb_char);
 }

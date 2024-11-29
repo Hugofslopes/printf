@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 19:23:09 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 18:19:21 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:01:48 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_pf_dash_dot_s(char *str, size_t len, size_t field_len)
 {
-	size_t i;
-	size_t numb_char;
-	size_t len2;
+	size_t	i;
+	size_t	numb_char;
+	size_t	len2;
 
 	i = 0;
 	numb_char = 0;
@@ -30,6 +30,6 @@ size_t	ft_pf_dash_dot_s(char *str, size_t len, size_t field_len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;
-	}	
+	}
 	return (numb_char);
 }

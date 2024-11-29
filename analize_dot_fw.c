@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   analize_dot_fw.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 13:59:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 13:53:56 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:14:02 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 size_t	analize_dot_fw(va_list args, size_t numb_char, char **format, \
 size_t field_len)
 {
-	size_t count;
-	size_t len;
+	size_t	count;
+	size_t	len;
 
 	(*format)++;
 	len = ft_pf_atoi(*format);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dash_dot.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 13:59:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/27 14:53:23 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:05:10 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 size_t	handle_dash_dot(va_list args, size_t numb_char, char **format, \
 size_t field_len)
 {
-	size_t count;
-	size_t len;
+	size_t	count;
+	size_t	len;
 
 	(*format)++;
 	len = ft_pf_atoi(*format);
@@ -34,6 +34,7 @@ size_t field_len)
 	if (**format == 'd' || **format == 'i')
 		numb_char += ft_pf_dash_dot(va_arg(args, int), len, field_len);
 	if (**format == 'u')
-		numb_char += ft_pf_dash_dot_u(va_arg(args, unsigned int), len, field_len);
+		numb_char += ft_pf_dash_dot_u(va_arg(args, unsigned int), \
+		len, field_len);
 	return (numb_char);
 }
