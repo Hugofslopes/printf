@@ -6,11 +6,11 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 13:59:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:14:02 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/30 12:40:37 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	analize_dot_fw(va_list args, size_t numb_char, char **format, \
 size_t field_len)
@@ -19,6 +19,10 @@ size_t field_len)
 	size_t	len;
 
 	(*format)++;
+	while (**format == '0')
+	{
+		(*format)++;
+	}
 	len = ft_pf_atoi(*format);
 	count = count_decimal(len);
 	go_foward_array(format, count);

@@ -6,26 +6,27 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:33:07 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 16:58:25 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 11:47:22 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-size_t	ft_putnbr_hex_hash_dot(unsigned long n, size_t dash_len, \
+size_t	ft_putnbr_hex_hash_dot(unsigned int n, size_t dash_len, \
 size_t n_zeros, char *base)
 {
-	int		array[11];
+	int		array[8];
 	size_t	i;
 	size_t	j;
 	size_t	numb_char;
-	char	str[10];
+	char	str[8];
 
 	numb_char = 0;
-	pf_bzero(str, 10);
+	pf_bzero(str, 8);
+	pf_bzero(array, 8);
 	j = 0;
 	i = 0;
-	while (n > 0)
+	while (n > 0 && i <= 7)
 	{
 		array[i++] = (n % 16);
 		n /= 16;

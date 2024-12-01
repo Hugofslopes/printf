@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 09:12:21 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 15:32:02 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:28:18 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_pf_putstr(char *s)
 {

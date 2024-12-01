@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_atoi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 13:57:29 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/21 16:02:23 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:24:30 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_pf_atoi(char *str)
 {

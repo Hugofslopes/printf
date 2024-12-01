@@ -6,23 +6,23 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 20:50:22 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 16:40:44 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 11:46:43 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-size_t	ft_pf_fw_dot_hex(unsigned long n, size_t len, size_t field_len, \
+size_t	ft_pf_fw_dot_hex(unsigned int n, size_t len, size_t field_len, \
 char *base)
 {
 	size_t	numb_char;
 	size_t	i;
-	int		array[20];
+	int		array[8];
 
 	i = 0;
 	numb_char = 0;
-	pf_bzero(array, 20);
-	while (n)
+	pf_bzero(array, 8);
+	while (n && i <= 7)
 	{
 		array[i++] = n % 16;
 		n /= 16;

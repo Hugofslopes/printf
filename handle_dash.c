@@ -6,11 +6,11 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:54:16 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 16:38:11 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/30 13:26:55 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	handle_dash(va_list args, char **format, size_t nub_ch)
 {
@@ -18,6 +18,8 @@ size_t	handle_dash(va_list args, char **format, size_t nub_ch)
 	size_t	count;
 
 	(*format)++;
+	while (**format == '-')
+		(*format)++;
 	if (**format == '0')
 		(*format)++;
 	len = ft_pf_atoi(*format);

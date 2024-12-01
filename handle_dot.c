@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 12:08:41 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 12:58:07 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 12:04:41 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	handle_dot(va_list args, char **format, size_t nb_ch)
 {
@@ -30,10 +30,10 @@ size_t	handle_dot(va_list args, char **format, size_t nb_ch)
 	go_foward_array(format, count);
 	if (**format == 's')
 		nb_ch += ft_pf_putstr_dot(args, nb_ch, len);
-	if (**format == 'x')
+	else if (**format == 'x')
 		nb_ch += ft_putnbr_hex_dot(va_arg(args, unsigned long), nb_ch, \
 		len, BASE_L);
-	if (**format == 'X')
+	else if (**format == 'X')
 		nb_ch += ft_putnbr_hex_dot(va_arg(args, unsigned long), \
 		nb_ch, len, BASE_U);
 	else
@@ -46,7 +46,9 @@ size_t	handle_dot2(va_list args, char **format, size_t nb_ch, size_t len)
 	nb_ch = 0;
 	if (**format == 'i' || **format == 'd')
 		nb_ch += ft_pf_putnbr_dot(va_arg(args, int), len);
-	if (**format == 'u')
+	else if (**format == 'u')
 		nb_ch += ft_pf_putnbr_ui_dot(va_arg(args, unsigned long), len);
+	else if (**format == 'c')
+		nb_ch += ft_pf_putchar(va_arg(args, int));
 	return (nb_ch);
 }

@@ -6,11 +6,11 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 21:16:27 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:16:58 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/30 12:29:11 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_pf_fw_dot(int nb, size_t len, size_t field_len)
 {
@@ -44,7 +44,7 @@ size_t	ft_pf_fw_dotb(size_t i, size_t len, size_t field_len, int nb)
 	if (nb < 0)
 		number_char += ft_pf_fw_dotneg(i, len, field_len, nb);
 	else
-		ft_pf_fw_dotc(i, len, field_len, nb);
+		number_char += ft_pf_fw_dotc(i, len, field_len, nb);
 	return (number_char);
 }
 

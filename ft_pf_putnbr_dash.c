@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_dash.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:43:17 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/28 14:22:02 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/30 10:02:30 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_pf_putnbr_dash(int n, size_t field_len)
 {
@@ -47,6 +47,8 @@ size_t	ft_pf_putnbr_dash2(int n, size_t field_len, size_t i, char *array)
 		numb_char += ft_pf_putchar('-');
 	while (i > 0)
 		numb_char += ft_pf_putchar(array[--i]);
+	if (n < 0)
+		len++;
 	while (field_len > (size_t)len)
 	{
 		numb_char += ft_pf_putchar(' ');

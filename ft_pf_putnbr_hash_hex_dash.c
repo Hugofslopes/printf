@@ -6,13 +6,13 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:42:15 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/26 18:15:09 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 11:55:20 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-size_t	ft_pf_putnbr_hash_hex_dash(unsigned long n, char *base, \
+size_t	ft_pf_putnbr_hash_hex_dash(unsigned int n, char *base, \
 size_t field_len, char c)
 {
 	size_t	numb_char;
@@ -26,7 +26,7 @@ size_t field_len, char c)
 	pf_bzero(array, 11);
 	pf_bzero(str, 10);
 	i = 0;
-	while (n > 0)
+	while (n > 0 && i <= 7)
 	{
 		array[i++] = (n % 16);
 		n /= 16;

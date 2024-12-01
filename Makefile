@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+         #
+#    By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 09:37:48 by hfilipe-          #+#    #+#              #
-#    Updated: 2024/11/28 11:11:25 by hfilipe-         ###   ########.fr        #
+#    Updated: 2024/12/01 11:56:16 by hfilipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ ft_pf_dash_dot_hex.c ft_pf_putnbr_empty.c handle_dot_hash.c \
 ft_putnbr_hex_hash_dot.c \
 ft_putstr_fd.c ft_putchar_fd.c 
 OBJ = $(SRC:.c=.o)
-NAME = printft.a
+NAME = libftprintf.a
 EXEC = main
 MAIN_SRC = main.c
 EXEC2 = main2
@@ -41,6 +41,8 @@ $(NAME): $(OBJ)
 	@ar rcs $@ $^	
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: all
 
 main: $(EXEC)
 	$(CC) $(CFLAGS) $(SRC) $(MAIN_SRC) -o $(EXEC) -g

@@ -6,11 +6,11 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:08:23 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:26:45 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {

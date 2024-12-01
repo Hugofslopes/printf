@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_ui_dot.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:55:03 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 15:40:52 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 18:50:08 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_pf_putnbr_ui_dot(unsigned int n, size_t field_len)
 {
@@ -22,6 +22,8 @@ size_t	ft_pf_putnbr_ui_dot(unsigned int n, size_t field_len)
 	numb_char = 0;
 	if (n == 0)
 		array[i++] = 48;
+	if (n == 0 && field_len == 0)
+		return (0);
 	while (n > 0)
 	{
 		array[i++] = (n % 10) + '0';

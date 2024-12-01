@@ -6,11 +6,11 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:44:42 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:12:51 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:25:42 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 size_t	ft_pf_putnbr_hash_fw(va_list args, char **format, size_t numb_char)
 {
@@ -81,11 +81,8 @@ size_t	c_array_size(unsigned long n)
 {
 	int		array[11];
 	size_t	i;
-	size_t	j;
-	size_t	len;
 
 	pf_bzero(array, 20);
-	j = 0;
 	i = 0;
 	while (n > 0)
 	{

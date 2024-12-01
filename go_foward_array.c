@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   go_foward_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 10:07:57 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/25 15:33:12 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/11/29 17:30:38 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	go_foward_array(char **array, size_t numb)
 {
