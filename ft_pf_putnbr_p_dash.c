@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 18:45:03 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/30 09:54:22 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 19:51:19 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_pf_putnbr_p_dash(unsigned long n, char *base, size_t field_len)
 	pf_bzero(str, 20);
 	pf_bzero(array, 20);
 	if (n == 0)
-		return (ft_pf_putstr("(nil)"), 5);
+		return (p_isnull_dash("(nil)", field_len, numb_char));
 	if (field_len > 1)
 		field_len -= 2;
 	i = 0;
@@ -53,6 +53,20 @@ size_t	ft_pf_putnbr_p_dash2(char *str, size_t field_len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;
+	}
+	return (numb_char);
+}
+
+size_t	p_isnull_dash(char *str, size_t field_len, size_t numb_char)
+{
+	numb_char += ft_pf_putstr(str);
+	if (field_len > 5)
+	{
+		while (field_len > 5)
+		{
+			numb_char += ft_pf_putchar(' ');
+			field_len--;
+		}
 	}
 	return (numb_char);
 }

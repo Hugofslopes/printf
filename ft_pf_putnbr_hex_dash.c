@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:03:50 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 11:51:23 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 13:13:50 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ size_t	ft_pf_putnbr_hex_dashb(char *str, size_t field_len)
 	numb_char = 0;
 	len = ft_strlen(str);
 	numb_char += ft_pf_putstr(str);
-	while (len < field_len)
+	while (field_len > len)
 	{
 		numb_char += ft_pf_putchar(' ');
 		field_len--;

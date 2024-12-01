@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 11:55:38 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 19:54:20 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,15 @@ size_t			ft_pf_putnbr_hex_dashc(size_t field_len);
 size_t			u_negative(size_t field_size, size_t len);
 size_t			elses(va_list args, char **format, size_t numb_char);
 size_t			d_zero(va_list args, size_t numb_char, size_t f_len);
+size_t			str_null_dash(size_t field_len, size_t numb_char);
+size_t			str_null_dash_dot(size_t field_len, size_t numb_char, \
+size_t len);
+size_t			str_null_fw_dot(size_t field_len, size_t numb_char, \
+size_t len);
+size_t			hex_zero_fw(size_t numb_char, size_t field_len);
+size_t			p_isnull_dash(char *str, size_t field_len, \
+size_t numb_char);
+size_t			d_zero2(int i, size_t numb_char, size_t f_len);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 #endif

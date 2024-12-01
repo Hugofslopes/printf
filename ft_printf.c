@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:17:25 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:26:45 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:57:37 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,17 @@ size_t	analize_flags(va_list args, char **format, size_t numb_char)
 	{
 		if (**format == '#')
 			numb_char += hash_flag(args, format, numb_char);
-		if (**format == '+')
+		else if (**format == '+')
 			numb_char += put_sign(args, format, numb_char);
-		if (**format == '0')
+		else if (**format == '0')
 			numb_char += handle_zero(args, format, numb_char);
-		if (**format == '-')
+		else if (**format == '-')
 			numb_char += handle_dash(args, format, numb_char);
-		if (**format == '.')
+		else if (**format == '.')
 			numb_char += handle_dot(args, format, numb_char);
-		if (**format == 32)
+		else if (**format == 32)
 			numb_char += handle_empty_space(args, format, numb_char);
-		if (**format >= '1' && **format <= '9')
+		else if (**format >= '1' && **format <= '9')
 			numb_char += handle_field(args, format, numb_char);
 	}
 	return (numb_char);

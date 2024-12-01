@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:40:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/30 13:35:32 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 19:56:45 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	handle_zero(va_list args, char **format, size_t numb_char)
 	if (**format == 's')
 		numb_char += ft_pf_putstr_fw(va_arg(args, char *), f_len, numb_char);
 	else if (**format == 'd' || **format == 'i')
-		d_zero(args, numb_char, f_len);
+		numb_char += d_zero(args, numb_char, f_len);
 	else if (**format == 'c')
 		numb_char += ft_pf_putchar_fw(va_arg(args, int), f_len);
 	else if (**format == '.')
@@ -34,6 +34,8 @@ size_t	handle_zero(va_list args, char **format, size_t numb_char)
 	else if (**format == 'X')
 		numb_char += ft_putnbr_hex_dot(va_arg(args, unsigned long), numb_char, \
 		f_len, BASE_U);
+	else if (**format == '%')
+		numb_char += ft_pf_putchar('%');
 	return (numb_char);
 }
 
@@ -42,14 +44,31 @@ size_t	d_zero(va_list args, size_t numb_char, size_t f_len)
 	int	i;
 
 	i = va_arg(args, int);
-	if (i >= 0)
+	if (i > 0)
 		numb_char += ft_pf_putnbr_dot(i, f_len);
-	else
+	else if (i == 0)
 	{
 		if (f_len == 0)
-			numb_char += ft_pf_putnbr_dot(i, f_len);
+			numb_char += ft_pf_putchar('0');
 		else
-			numb_char += ft_pf_putnbr_dot(i, f_len - 1);
+		{
+			while (f_len)
+			{
+				numb_char += ft_pf_putchar('0');
+				f_len--;
+			}
+		}
 	}
+	else
+		numb_char += d_zero2(i, numb_char, f_len);
+	return (numb_char);
+}
+
+size_t	d_zero2(int i, size_t numb_char, size_t f_len)
+{
+	if (f_len == 0)
+		numb_char += ft_pf_putnbr_dot(i, f_len);
+	else
+		numb_char += ft_pf_putnbr_dot(i, f_len - 1);
 	return (numb_char);
 }

@@ -6,7 +6,7 @@
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:08:59 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/30 13:27:28 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/01 19:35:57 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ size_t	elses(va_list args, char **format, size_t numb_char)
 {
 	unsigned long	i;
 
-	i = va_arg(args, unsigned long);
+	i = va_arg(args, unsigned int);
 	if (**format == 'x')
 	{
 		if (i == 0)
