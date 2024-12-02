@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_sign_fw_dot.c                                  :+:      :+:    :+:   */
+/*   ft_pf_putnbr_sign_dot.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 16:33:09 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/02 18:50:28 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/12/02 18:35:46 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/12/02 18:53:06 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	put_sign_fw_dot(va_list args, size_t numb_char, char **format, \
-size_t f_len)
+size_t	ft_pf_putnbr_sign_dot(va_list args, size_t numb_char, size_t dot_len)
 {
-	size_t	dot_len;
+	size_t	count2;
+	int		numb;
 
-	(*format)++;
-	dot_len = field_size(format);
-	if (**format == 'd' || **format == 'i')
-		numb_char += ft_pf_sign_fw_dot(va_arg(args, int), dot_len, \
-		f_len, numb_char);
-	else if (**format == 'u')
-		numb_char += ft_pf_fw_dot_u(va_arg(args, unsigned int), dot_len, f_len);
+	numb = va_arg(args, int);
+	count2 = count_decimal(numb);
+	if (numb >= 0)
+		numb_char += ft_pf_putchar('+');
+	while (dot_len > count2 && numb > 0)
+	{
+		numb_char += ft_pf_putchar('0');
+		dot_len--;
+	}
+	if (numb > 0)
+		numb_char += ft_pf_putnbr(numb);
+	if (numb < 0)
+	{
+		numb_char += ft_pf_putnbr_dot(numb, dot_len);
+	}
 	return (numb_char);
 }

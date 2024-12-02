@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_sign_fw.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:09:57 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/02 16:27:10 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 18:49:56 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	ft_pf_putnbr_sign_fw2(int n, size_t field_len, size_t i, char *array)
 
 	numb_char = 0;
 	len = ft_strlen(array);
-		len++;
+	len++;
 	while (field_len > (size_t)len)
 	{
 		numb_char += ft_pf_putchar(' ');

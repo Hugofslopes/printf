@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/02 16:36:12 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 19:16:26 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,12 +164,23 @@ size_t			ft_putnbr_hex_fw_dot(unsigned int n, size_t len, \
 size_t dot_len, char c);
 size_t			put_sign_dot(va_list args, size_t numb_char, \
 char **format);
-size_t 			put_sign_fw(va_list args, size_t numb_char, char **format);
+size_t			put_sign_fw(va_list args, size_t numb_char, char **format);
 size_t			ft_pf_putnbr_sign_fw(int n, size_t field_len);
 size_t			ft_pf_putnbr_sign_fw2(int n, size_t field_len, size_t i, \
 char *array);
 size_t			put_sign_fw_dot(va_list args, size_t numb_char, char **format, \
 size_t f_len);
+size_t			ft_pf_sign_fw_dot(int nb, size_t len, size_t field_len, \
+size_t numb_char);
+size_t			ft_pf_sign_fw_dotb(size_t i, size_t len, size_t field_len, \
+int nb);
+size_t			ft_pf_putnbr_sign_dot(va_list args, size_t numb_char, \
+size_t dot_len);
+size_t			ft_putnbr_hex_fw_dotb(int i, size_t len, size_t dot_len, \
+char c);
+size_t			ft_putnbr_hex_fw_dotc(int i, size_t dot_len, size_t numb_char);
+size_t			ft_putnbr_hex_fw_dotd(int i, int *array, size_t numb_char, \
+char c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 #endif
