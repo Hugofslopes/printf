@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_hash_hex_fw2.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:51:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 11:54:18 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 12:23:48 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ size_t	ft_pf_putnbr_hash_hex_fw2b(char *str, size_t field_len, char c)
 		numb_char += ft_pf_putchar(' ');
 		field_len--;
 	}
-	numb_char += print_base(c);
+	if (c == 'l')
+		numb_char += ft_pf_putstr("0x");
+	else
+		numb_char += ft_pf_putstr("0X");
 	numb_char += ft_pf_putstr(str);
 	return (numb_char);
 }

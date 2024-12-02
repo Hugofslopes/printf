@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_zero.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:40:00 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 19:56:45 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 14:45:00 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ size_t	handle_zero(va_list args, char **format, size_t numb_char)
 	else if (**format == '.')
 		numb_char += analize_dot_fw(args, numb_char, format, f_len);
 	else if (**format == 'u')
-		numb_char += ft_pf_putnbr_ui_dot(va_arg(args, unsigned long), f_len);
+		numb_char += ft_pf_putnbr_ui_dot(va_arg(args, unsigned int), f_len);
 	else if (**format == 'x')
-		numb_char += ft_putnbr_hex_dot(va_arg(args, unsigned long), numb_char, \
+		numb_char += ft_putnbr_hex_dot(va_arg(args, unsigned int), numb_char, \
 		f_len, BASE_L);
 	else if (**format == 'X')
-		numb_char += ft_putnbr_hex_dot(va_arg(args, unsigned long), numb_char, \
+		numb_char += ft_putnbr_hex_dot(va_arg(args, unsigned int), numb_char, \
 		f_len, BASE_U);
 	else if (**format == '%')
 		numb_char += ft_pf_putchar('%');

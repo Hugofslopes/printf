@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 10:09:05 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 19:54:20 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:36:12 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,26 +68,22 @@ size_t			ft_putnbr_hex_dot(unsigned int n, size_t numb_char, \
 size_t n_zeros, char *base);
 size_t			ft_pf_putnbr_ui_dot(unsigned int n, size_t field_len);
 size_t			ft_pf_putnbr_dot(int n, size_t field_len);
-size_t			handle_dot_hash(unsigned long nbr, char **format, \
+size_t			handle_dot_hash(unsigned int nbr, char **format, \
 size_t numb_char);
 size_t			putnbr_hash_fw_dot(unsigned long n, char **format, \
 size_t numb_char, size_t len);
-size_t			print_fw(size_t len, size_t dot_len, size_t array_size, \
-size_t numb_char);
-size_t			c_array_size(unsigned long n);
 size_t			ft_pf_putnbr_hash_fw(va_list args, char **format, \
 size_t numb_char);
 size_t			ft_pf_putnbr_hash_hex_fw2(unsigned int n, char *base, \
 size_t field_len, char c);
 size_t			handle_dot2(va_list args, char **format, size_t nb_ch, \
 size_t len);
-size_t			print_base(char c);
 size_t			handle_dash_hash(va_list args, char **format, \
 size_t numb_char);
 size_t			putnbr_hash_dash_dot(unsigned long n, char **format, \
 size_t numb_char, size_t len);
 size_t			handle_field(va_list args, char **format, size_t nb_ch);
-size_t			put_sign_d(va_list args, size_t numb_char);
+size_t			put_sign_d(int n, size_t numb_char);
 void			*pf_bzero(void *ptr, size_t n);
 size_t			ft_pf_putnbr_hex_fwb(char *str, size_t field_len);
 size_t			ft_pf_putnbr_p_fw3(char *str, size_t field_len);
@@ -139,7 +135,7 @@ size_t			len_is_big_dash(size_t len, size_t i);
 size_t			ft_pf_dash_dotc(size_t i, size_t len, size_t field_len, \
 int nb);
 size_t			ft_pf_putnbr_empty(int n);
-size_t			handle_dot_hash(unsigned long nbr, char **format, \
+size_t			handle_dot_hash(unsigned int nbr, char **format, \
 size_t numb_char);
 size_t			ft_putnbr_hex_hash_dot(unsigned int n, size_t dash_len, \
 size_t n_zeros, char *base);
@@ -164,6 +160,16 @@ size_t			hex_zero_fw(size_t numb_char, size_t field_len);
 size_t			p_isnull_dash(char *str, size_t field_len, \
 size_t numb_char);
 size_t			d_zero2(int i, size_t numb_char, size_t f_len);
+size_t			ft_putnbr_hex_fw_dot(unsigned int n, size_t len, \
+size_t dot_len, char c);
+size_t			put_sign_dot(va_list args, size_t numb_char, \
+char **format);
+size_t 			put_sign_fw(va_list args, size_t numb_char, char **format);
+size_t			ft_pf_putnbr_sign_fw(int n, size_t field_len);
+size_t			ft_pf_putnbr_sign_fw2(int n, size_t field_len, size_t i, \
+char *array);
+size_t			put_sign_fw_dot(va_list args, size_t numb_char, char **format, \
+size_t f_len);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 #endif

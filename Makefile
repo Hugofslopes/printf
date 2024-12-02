@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+         #
+#    By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 09:37:48 by hfilipe-          #+#    #+#              #
-#    Updated: 2024/12/01 12:30:27 by hfilipe-         ###   ########.fr        #
+#    Updated: 2024/12/02 16:36:06 by hfilipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ ft_pf_putchar_dash.c ft_pf_putstr_dash.c ft_pf_putnbr_p_dash.c \
 ft_pf_putnbr_dash.c ft_pf_putnbr_ui_dash.c ft_pf_putnbr_hex_dash.c \
 handle_dash_dot.c ft_pf_dash_dot.c ft_pf_dash_dot_s.c ft_pf_dash_dot_u.c \
 ft_pf_dash_dot_hex.c ft_pf_putnbr_empty.c handle_dot_hash.c \
-ft_putnbr_hex_hash_dot.c \
+ft_putnbr_hex_hash_dot.c ft_putnbr_hex_fw_dot.c put_sign_dot.c put_sign_fw.c \
+ft_pf_putnbr_sign_fw.c put_sign_fw_dot.c \
 ft_putstr_fd.c ft_putchar_fd.c 
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a

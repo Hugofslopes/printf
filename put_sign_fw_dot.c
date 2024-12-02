@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_hex_dot.c                                :+:      :+:    :+:   */
+/*   put_sign_fw_dot.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 10:33:07 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/02 10:37:16 by hfilipe-         ###   ########.fr       */
+/*   Created: 2024/12/02 16:33:09 by hfilipe-          #+#    #+#             */
+/*   Updated: 2024/12/02 16:38:08 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_putnbr_hex_dot(unsigned int n, size_t numb_char, size_t n_zeros, \
-char *base)
+size_t put_sign_fw_dot(va_list args, size_t numb_char, char **format, \
+size_t f_len)
 {
-	int		array[8];
-	size_t	i;
-	size_t	j;
-	size_t	len;
-	char	str[9];
+	size_t	dot_len;
 
-	pf_bzero(str, 9);
-	j = 0;
-	i = 0;
-	len = 0;
-	while (n > 0)
-	{
-		array[i++] = (n % 16);
-		n /= 16;
-	}
-	while (i > 0)
-		str[j++] = base[array[--i]];
-	len = ft_strlen(str);
-	while (len < n_zeros)
-	{
-		numb_char += ft_pf_putchar('0');
-		n_zeros--;
-	}
-	numb_char += ft_pf_putstr(str);
+	dot_len = field_size(format);
+	if (**format == 'd' || **format == 'i')
+		numb_char += ft_pf_sign_fw_dot(va_arg(args, int), dot_len, f_len);
+	else if (**format == 'u')
+		numb_char += ft_pf_fw_dot_u(va_arg(args, unsigned int), dot_len, f_len);
 	return (numb_char);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_hex_dash.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 15:03:50 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 13:13:50 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 10:38:38 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ size_t	ft_pf_putnbr_hex_dash(unsigned int n, char *base, size_t field_len)
 	int		array[8];
 	size_t	i;
 	size_t	j;
-	char	str[8];
+	char	str[9];
 
-	pf_bzero(str, 8);
+	pf_bzero(str, 9);
 	pf_bzero(array, 8);
 	j = 0;
 	numb_char = 0;
@@ -29,7 +29,7 @@ size_t	ft_pf_putnbr_hex_dash(unsigned int n, char *base, size_t field_len)
 		return (ft_pf_putchar('0'), 1);
 	if (n == 0 && field_len > 0)
 		return (ft_pf_putnbr_hex_dashc(field_len));
-	while (n > 0 && i <= 7)
+	while (n > 0)
 	{
 		array[i++] = (n % 16);
 		n /= 16;

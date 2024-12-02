@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   handle_dot_hash.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:08:59 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/11/29 17:29:33 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 13:49:55 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	handle_dot_hash(unsigned long nbr, char **format, size_t numb_char)
+size_t	handle_dot_hash(unsigned int nbr, char **format, size_t numb_char)
 {
 	size_t	len;
 	size_t	count;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pf_putnbr_hash_hex_dash.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:42:15 by hfilipe-          #+#    #+#             */
-/*   Updated: 2024/12/01 11:55:20 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2024/12/02 12:56:29 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ size_t	ft_pf_putnbr_hash_hex_dashb(char *str, size_t field_len, char c)
 
 	numb_char = 0;
 	len = ft_strlen(str);
-	numb_char += print_base(c);
+	if (c == 'l') 
+		numb_char += ft_pf_putstr("0x");
+	else
+		numb_char += ft_pf_putstr("0X");
 	numb_char += ft_pf_putstr(str);
 	while (len < field_len)
 	{
