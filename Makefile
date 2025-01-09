@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+         #
+#    By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 09:37:48 by hfilipe-          #+#    #+#              #
-#    Updated: 2024/12/02 18:41:55 by hfilipe-         ###   ########.fr        #
+#    Updated: 2025/01/09 11:20:40 by hfilipe-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,15 @@ handle_dash_dot.c ft_pf_dash_dot.c ft_pf_dash_dot_s.c ft_pf_dash_dot_u.c \
 ft_pf_dash_dot_hex.c ft_pf_putnbr_empty.c handle_dot_hash.c \
 ft_putnbr_hex_hash_dot.c ft_putnbr_hex_fw_dot.c put_sign_dot.c put_sign_fw.c \
 ft_pf_putnbr_sign_fw.c put_sign_fw_dot.c ft_pf_sign_fw_dot.c \
-ft_pf_putnbr_sign_dot.c \
-ft_putstr_fd.c ft_putchar_fd.c 
+ft_pf_putnbr_sign_dot.c 
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a
 EXEC = main
-MAIN_SRC = main.c
+MAIN_SRC = tests_main/main.c 
 EXEC2 = main2
-MAIN_SRC2 = main_P.c
-EXECTEST = maint
-MAIN_TEST = test_printf.c
+MAIN_SRC2 = tests_main/main_P.c tests_main/ft_putstr_fd.c
+INCLUDE= tests_main/colors.h
+
 all: $(NAME)
 $(NAME): $(OBJ)
 	@ar rcs $@ $^	
@@ -47,16 +46,13 @@ $(NAME): $(OBJ)
 bonus: all
 
 main: $(EXEC)
-	$(CC) $(CFLAGS) $(SRC) $(MAIN_SRC) -o $(EXEC) -g
+	$(CC) -I$(INCLUDE) $(CFLAGS) $(SRC) $(MAIN_SRC) -o $(EXEC) -g
 
 main2: $(EXEC2)
-	$(CC) $(CFLAGS) $(SRC) $(MAIN_SRC2) -o $(EXEC2) -g
-
-maint: $(EXECTEST)
-	$(CC) $(CFLAGS) $(SRC) $(MAIN_TEST) -o $(EXECTEST) -g
+	$(CC) -I$(INCLUDE) $(CFLAGS) $(SRC) $(MAIN_SRC2) -o $(EXEC2) -g
 
 clean:
-	@rm -f $(OBJ) $(BONUS_OBJ) $(MAIN_OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
 	@rm -f $(NAME) $(EXEC) $(EXECTEST) $(EXEC2) 

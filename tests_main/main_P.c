@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_P.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hfilipe- <hfilipe-@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: hfilipe- <hfilipe-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:34:25 by passunca          #+#    #+#             */
-/*   Updated: 2024/11/30 11:57:26 by hfilipe-         ###   ########.fr       */
+/*   Updated: 2025/01/09 11:19:05 by hfilipe-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #define SEP "~~~~~~~~~~~~~~~~~~~~\n"
 #define RLR "12345678901234567890\n"
 #include <limits.h>
+
+void	ft_putstr_fd(char *s, int fd);
 
 static void ft_test(int n, char *frmt, char *specif);
 
