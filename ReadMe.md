@@ -37,8 +37,8 @@
 This main function was created by me to cover various cases for the entire ft_printf. I compare the behavior of the original printf with my version in each case.
 
 	make main2 ; ./main2
-This main function was created by <a href="https://github.com/PedroZappa">PedroZappa/a> to cover some additional tests.
+This main function was created by <a href="https://github.com/PedroZappa">PedroZappa</a> to cover some additional tests.
 ## Improvements
 <p>
-    The improvements to be made are to accept multiple pipes and handle more input errors, like the case where you unset PATH before running the program.
+    The improvements to be made are 
 </p>
