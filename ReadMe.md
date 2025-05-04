@@ -8,7 +8,7 @@
 
 ## Summary
 <p>
-    <b>Printf</b> is an 42 School project wich has the goal to replciate the beahivour of the original printf form stdio.h
+    <b>Printf</b> It is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover 
 </p>
 
 ## Code Phases
