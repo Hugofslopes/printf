@@ -13,7 +13,7 @@
 
 ## Code Phases
 <ol>
-    <li>Check if there is the correct number of arguments: 4 (2 commands and 2 files).</li>
+    <li></li>
     </ol>
 
 ## Code Setup
