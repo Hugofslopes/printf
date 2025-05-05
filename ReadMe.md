@@ -8,7 +8,7 @@
 
 ## Summary
 <p>
-    <b>Printf</b> It is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover the flags:
+    <b>Printf</b> is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover the flags:
 </p>
 <ul>
     <li><b>c</b>: To print a single character.</li>
@@ -20,6 +20,13 @@
     <li><b>x</b>: To print, in lowercase, an unsigned integer in hexadecimal format.</li>
     <li><b>X</b>: To print, in uppercase, an unsigned integer in hexadecimal format.</li>
 </ul>
+<p>
+The bonus part should cover the flags and possible combinations between them:
+</p>
+<ul>
+    <li><b>0</b>: Indicates that the output should be padded with zeros instead of spaces. This flag can be aplyed to <b>d</b>,<b>i</b>,<b>u</b>,<b>x</b> and <b>X</b>.</li>
+    <li><b>#</b>: "This flag has the <b>0f</b> before the hexadecimal numbers.</li>
+
 
 ## Code Phases
 <ol>
