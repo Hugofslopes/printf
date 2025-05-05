@@ -8,8 +8,18 @@
 
 ## Summary
 <p>
-    <b>Printf</b> It is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover 
+    <b>Printf</b> It is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover the flags:
 </p>
+<ul>
+    <li><b>c</b>: To print a single character.</li>
+    <li><b>s</b>: To print a string.</li>
+    <li><b>s</b>: To print a pointer.</li>
+    <li><b>d</b>: To print a signed decimal integer. It explicitly indicates that the number is in decimal format</li>
+    <li><b>i</b>: To print a signed decimal integer.</li>
+    <li><b>u</b>: To print an unsigned decimal integer.</li>
+    <li><b>x</b>: To print, in lowercase, an unsigned integer in hexadecimal format.</li>
+    <li><b>X</b>: To print, in uppercase, an unsigned integer in hexadecimal format.</li>
+</ul>
 
 ## Code Phases
 <ol>
