@@ -8,7 +8,7 @@
 
 ## Summary
 <p>
-    <b>Printf</b> is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover the flags:
+    <b>Printf</b> is a 42 School project that aims to replicate the behavior of the original <b>printf</b> from <b>stdio.h</b>. The mandatory part should cover the following format specifiers.:
 </p>
 <ul>
     <li><b>c</b>: To print a single character.</li>
@@ -29,12 +29,16 @@ The bonus part should cover the flags and possible combinations between them:
     <li><b>.</b>: This flag specifies the precision of the output.</li>
     <li><b>+</b>: This flag forces the output to include a sign <b>+</b> or <b>-</b> for numeric values.
    <li><b>-</b>: This flag modifies the output to be aligned to the left side of the specified width, with any extra space filled with spaces on the right.</li>
-   <li><b>' '</b>: The space flag adds a leading space for positive numbers, indicating their sign. It is used in conjunction with signed integer and floating-point format specifiers.</b>
+   <li><b>' '</b>: The space flag adds a leading space for positive numbers, indicating their sign. It is used in conjunction with signed integer.</b>
 </ul>
 
 ## Code Phases
 <ol>
-    <li></li>
+    <li>Receives <b>str</b>, which is the string specifying what should be printed and <b>args</b>, which are the multiple parameters that can be passed to the function.
+    </li>
+    <li> Then I have a loop that will go through all of the string <b>str</b>.</li>
+    <li>If the character is different from <b>'%'</b>, I just call the function to print the character and increment the number of characters. I always increment the number of characters printed because printf returns the number of printed characters."</li>
+    <li>The <b>select_formats( )</b> function is used to choose which format specifiers were selected and which flags were used. I pass the address of the string <b>s</b> so I can increment its pointer directly. The return value of this function is the number of characters printed.</li>
     </ol>
 
 ## Code Setup
@@ -59,7 +63,8 @@ This main function was created by me to cover various cases for the entire ft_pr
 
 	make main2 ; ./main2
 This main function was created by <a href="https://github.com/PedroZappa">PedroZappa</a> to cover some additional tests.
+
 ## Improvements
 <p>
-    The improvements to be made are 
+    The improvements to be made are to tokenize the input in a way that makes the selection of format specifiers and flags easier. In my case, I created a scheme like a tree that follows each hypothesis of input, which made the code much larger than necessary."
 </p>
