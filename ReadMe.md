@@ -66,5 +66,5 @@ This main function was created by <a href="https://github.com/PedroZappa">PedroZ
 
 ## Improvements
 <p>
-    The improvements to be made are to tokenize the input in a way that makes the selection of format specifiers and flags easier. In my case, I created a scheme like a tree that follows each hypothesis of input, which made the code much larger than necessary."
+    The improvements to be made are to tokenize the input in a way that makes the selection of format specifiers and flags easier. In my case, I created a scheme like a tree that follows each hypothesis of input, which made the code much larger than necessary.
 </p>
