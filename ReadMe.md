@@ -25,9 +25,9 @@ The bonus part should cover the flags and possible combinations between them:
 </p>
 <ul>
     <li><b>0</b>: Indicates that the output should be padded with zeros instead of spaces. This flag can be aplyed to <b>d</b>,<b>i</b>,<b>u</b>,<b>x</b> and <b>X</b>.</li>
-    <li><b>#</b>: "This flag has the <b>0f</b> before the hexadecimal numbers.</li>
-    <li><b>.</b>This flag specifies the precision of the output.</li>
-    <li><b>+</b>This flag forces the output to include a sign <b>+</b> or <b>-</b> for numeric values.
+    <li><b>#</b>: This flag has the <b>0f</b> before the hexadecimal numbers.</li>
+    <li><b>.</b>: This flag specifies the precision of the output.</li>
+    <li><b>+</b>: This flag forces the output to include a sign <b>+</b> or <b>-</b> for numeric values.
 </ul>
 
 ## Code Phases
